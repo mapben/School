@@ -1,6 +1,6 @@
 {
   "$GMProject":"",
-  "%Name":"BLANK GAME_1",
+  "%Name":"School",
   "AudioGroups":[
     {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
@@ -42,7 +42,7 @@
   "MetaData":{
     "IDEVersion":"2024.11.0.179",
   },
-  "name":"BLANK GAME_1",
+  "name":"School",
   "resources":[
     {"id":{"name":"obj_advance_button","path":"objects/obj_advance_button/obj_advance_button.yy",},},
     {"id":{"name":"obj_advance_confirm_popup","path":"objects/obj_advance_confirm_popup/obj_advance_confirm_popup.yy",},},
