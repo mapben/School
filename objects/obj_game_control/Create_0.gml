@@ -8,6 +8,7 @@ global.weekly_expenses = 8000; // Base weekly expenses
 global.special_event = ""; // Stores random events that occur
 global.notification_list = []; // Stores game notifications
 global.facilities = []; // Stores purchased facilities
+global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
 
 draw_text(x, y, "Week: " + string(global.current_week));
@@ -105,3 +106,25 @@ function calculate_facility_grade() {
     else global.facility_grade = "F";
 }
 
+function calculate_overall_student_grade() {
+    if (array_length(global.students) == 0) {
+        global.overall_student_grade = "N/A"; // No students
+        return;
+    }
+
+    var total_grades = 0;
+    for (var i = 0; i < array_length(global.students); i++) {
+        total_grades += global.students[i].grade;
+    }
+
+    var avg_grade = total_grades / array_length(global.students);
+
+    // Convert to a letter grade
+    if (avg_grade >= 90) global.overall_student_grade = "A";
+    else if (avg_grade >= 80) global.overall_student_grade = "B";
+    else if (avg_grade >= 70) global.overall_student_grade = "C";
+    else if (avg_grade >= 60) global.overall_student_grade = "D";
+    else global.overall_student_grade = "F";
+}
+
+calculate_overall_student_grade();

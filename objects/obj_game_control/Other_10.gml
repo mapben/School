@@ -7,11 +7,14 @@ global.current_week += 1;
 // Update school budget (assuming tuition income and faculty salaries)
 global.school_budget += global.weekly_income - global.weekly_expenses;
 
-// Update each student's grade dynamically
+// Improve student grades slightly each week
 for (var i = 0; i < array_length(global.students); i++) {
     global.students[i].grade += irandom_range(1, 3);
     global.students[i].grade = clamp(global.students[i].grade, 0, 100);
 }
+
+// Recalculate overall student grade
+calculate_overall_student_grade();
 
 // Recalculate facility grade every week
 calculate_facility_grade();
@@ -37,3 +40,4 @@ for (var j = 0; j < array_length(global.faculty); j++) {
     global.faculty[j].happiness += happiness_boost + irandom_range(-5, 5);
     global.faculty[j].happiness = clamp(global.faculty[j].happiness, 0, 100);
 }
+
