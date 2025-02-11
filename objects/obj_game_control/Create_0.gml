@@ -7,6 +7,8 @@ global.weekly_income = 10000; // Revenue per week
 global.weekly_expenses = 8000; // Base weekly expenses
 global.special_event = ""; // Stores random events that occur
 global.notification_list = []; // Stores game notifications
+global.facilities = []; // Stores purchased facilities
+global.facility_grade = "F"; // Default grade
 
 draw_text(x, y, "Week: " + string(global.current_week));
 
@@ -40,7 +42,6 @@ function add_faculty() {
     var faculty = {
         id: global.next_faculty_id,
         name: "Trainer " + string(global.next_faculty_id),
-        satisfaction: irandom_range(60, 100),
         happiness: irandom_range(60, 100) // Faculty happiness starts between 60-100
     };
     array_push(global.faculty, faculty);
@@ -79,5 +80,28 @@ function remove_faculty(faculty_id) {
     if (index != -1) {
         array_delete(global.faculty, index, 1);
     }
+}
+
+function calculate_facility_grade() {
+    var total_score = 0;
+
+    // Assign a score for each facility type
+    for (var i = 0; i < array_length(global.facilities); i++) {
+        switch (global.facilities[i].type) {
+            case "classroom": total_score += 3; break;
+            case "gym": total_score += 4; break;
+            case "vet_clinic": total_score += 5; break;
+            case "playground": total_score += 2; break;
+            case "swimming_pool": total_score += 4; break;
+            default: total_score += 1; break;
+        }
+    }
+
+    // Convert score into a letter grade
+    if (total_score >= 20) global.facility_grade = "A";
+    else if (total_score >= 15) global.facility_grade = "B";
+    else if (total_score >= 10) global.facility_grade = "C";
+    else if (total_score >= 5) global.facility_grade = "D";
+    else global.facility_grade = "F";
 }
 
