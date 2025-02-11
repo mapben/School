@@ -3,12 +3,13 @@
 draw_text(50, 50, "Week: " + string(global.current_week));
 draw_text(50, 80, "School Budget: $" + string(global.school_budget));
 draw_text(50, 110, "School Facility Grade: " + global.facility_grade);
+draw_text(50, 140, "Overall Student Grade: " + global.overall_student_grade);
 
 // Display students (dogs)
-var y_offset = 120;
+var y_offset = 180;
 draw_text(50, y_offset, "Dogs (Students):");
 for (var i = 0; i < array_length(global.students); i++) {
-    draw_text(50, y_offset + (i * 20), global.students[i].name + " - Grade: " + string(global.students[i].grade) +
+    draw_text(50, y_offset + 20 + (i * 20), global.students[i].name + " - Grade: " + string(global.students[i].grade) +
               " - Happiness: " + string(global.students[i].happiness));
 }
 
