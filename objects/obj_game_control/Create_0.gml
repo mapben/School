@@ -25,27 +25,28 @@ global.faculty = [];  // Stores faculty objects
 global.next_student_id = 1; // Unique ID for new students
 global.next_faculty_id = 1;  // Unique ID for new faculty members
 
-// Function to add a student
 function add_student() {
     var student = {
         id: global.next_student_id,
-        name: "Student " + string(global.next_student_id),
-        grade: irandom_range(50, 100)
+        name: "Dog " + string(global.next_student_id),
+        grade: irandom_range(50, 100),
+        happiness: irandom_range(60, 100) // Happiness starts between 60-100
     };
     array_push(global.students, student);
     global.next_student_id += 1;
 }
 
-// Function to add a faculty member
 function add_faculty() {
     var faculty = {
         id: global.next_faculty_id,
-        name: "Faculty " + string(global.next_faculty_id),
-        satisfaction: irandom_range(60, 100)
+        name: "Trainer " + string(global.next_faculty_id),
+        satisfaction: irandom_range(60, 100),
+        happiness: irandom_range(60, 100) // Faculty happiness starts between 60-100
     };
     array_push(global.faculty, faculty);
     global.next_faculty_id += 1;
 }
+
 
 // Add some initial students and faculty
 for (var i = 0; i < 10; i++) add_student();
