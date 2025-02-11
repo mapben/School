@@ -9,3 +9,4 @@ if (global.school_budget >= 20000) { // Example cost
 } else {
     show_message("Not enough funds!");
 }
+

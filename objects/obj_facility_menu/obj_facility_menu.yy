@@ -10,7 +10,7 @@
   "overriddenProperties":[],
   "parent":{
     "name":"GUI Elements",
-    "path":"folders/Sprites/GUI Elements.yy",
+    "path":"folders/Objects/GUI Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,

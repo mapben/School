@@ -10,12 +10,21 @@ if (mouse_check_button_pressed(mb_left)) {
         if (my > menu_y + 50 && my < menu_y + 70 && global.school_budget >= 20000) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
             global.school_budget -= 20000;
-            instance_destroy();
+			var new_facility = { type: "classroom" };
+			array_push(global.facilities, new_facility);
+			calculate_facility_grade();
+			instance_create_layer(x, y, "Instances", obj_new_building);
+			instance_destroy();
+
         }
         if (my > menu_y + 80 && my < menu_y + 100 && global.school_budget >= 30000) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
             global.school_budget -= 30000;
-            instance_destroy();
+			var new_facility = { type: "gym" };
+			array_push(global.facilities, new_facility);
+			calculate_facility_grade();
+			instance_create_layer(x, y, "Instances", obj_new_building);
+			instance_destroy();
         }
         if (my > menu_y + 110 && my < menu_y + 130) {
             instance_destroy(); // Cancel
