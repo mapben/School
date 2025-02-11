@@ -56,6 +56,7 @@
     {"id":{"name":"obj_principal","path":"objects/obj_principal/obj_principal.yy",},},
     {"id":{"name":"obj_remove_student_button","path":"objects/obj_remove_student_button/obj_remove_student_button.yy",},},
     {"id":{"name":"obj_school_building","path":"objects/obj_school_building/obj_school_building.yy",},},
+    {"id":{"name":"rm_campus_pixel","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},},
     {"id":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
     {"id":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"id":{"name":"spr_advance_button","path":"sprites/spr_advance_button/spr_advance_button.yy",},},
@@ -78,6 +79,7 @@
     {"id":{"name":"spr_principal_right","path":"sprites/spr_principal_right/spr_principal_right.yy",},},
     {"id":{"name":"spr_schoolTile","path":"sprites/spr_schoolTile/spr_schoolTile.yy",},},
     {"id":{"name":"spr_shcool_building","path":"sprites/spr_shcool_building/spr_shcool_building.yy",},},
+    {"id":{"name":"tileset_campus","path":"tilesets/tileset_campus/tileset_campus.yy",},},
     {"id":{"name":"tileset_city","path":"tilesets/tileset_city/tileset_city.yy",},},
     {"id":{"name":"tileset_littleTown","path":"tilesets/tileset_littleTown/tileset_littleTown.yy",},},
     {"id":{"name":"tileset_school","path":"tilesets/tileset_school/tileset_school.yy",},},
@@ -87,6 +89,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
+    {"roomId":{"name":"rm_campus_pixel","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
