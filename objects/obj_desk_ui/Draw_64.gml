@@ -58,3 +58,5 @@ draw_rectangle(btn_x, btn_y, btn_x + btn_width, btn_y + btn_height, false);
 
 draw_set_color(c_white);
 draw_text(btn_x + 25, btn_y + 13, "Return to Campus");
+
+draw_text(-50, -30, "Principal: " + global.player_name);

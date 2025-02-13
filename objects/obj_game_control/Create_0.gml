@@ -1,6 +1,8 @@
 /// @description 114
 // You can write your code in this editor
 // Initialize Global Variables
+global.player_name = "";
+
 global.current_week = 1; // Tracks the current game week
 global.school_budget = 50000; // Starting money for the school
 global.weekly_income = 10000; // Revenue per week
