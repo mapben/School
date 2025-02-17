@@ -6,17 +6,16 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
-    {"name":"inst_1B090E65","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},
+    {"name":"inst_318FFD41","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},
   ],
   "isDnd":false,
   "layers":[
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v1","%Name":"inst_1B090E65","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1B090E65","objectId":{"name":"obj_school_building","path":"objects/obj_school_building/obj_school_building.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":384.0,},
+        {"$GMRInstance":"v1","%Name":"inst_318FFD41","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_318FFD41","objectId":{"name":"obj_school_building","path":"objects/obj_school_building/obj_school_building.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":864.0,"y":192.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":10,"SerialiseWidth":10,"TileSerialiseData":[
-          5,12,11,17,10,10,5,22,4,5,5,12,22,10,11,10,10,17,1,11,22,21,14,14,20,14,14,14,15,9,8,12,10,1,19,3,10,
-          10,22,9,22,12,10,18,10,18,14,3,11,9,11,12,5,5,7,17,17,9,8,9,5,21,2,14,20,14,14,18,14,19,5,15,17,22,12,
-          4,5,22,5,9,11,12,8,1,18,3,11,22,4,7,4,13,18,15,16,13,18,14,18,15,
+    {"$GMRTileLayer":"","%Name":"Tiles_1","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Tiles_1","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":8,"SerialiseWidth":9,"TileSerialiseData":[
+          5,10,11,17,8,8,8,8,4,5,19,21,2,19,21,14,15,10,17,20,11,18,23,18,14,8,10,8,22,17,12,17,9,16,10,17,17,
+          20,17,6,17,6,18,21,11,17,7,8,17,10,11,9,8,8,17,6,14,2,19,21,6,22,10,4,5,11,17,4,8,5,17,11,
         ],},"tilesetId":{"name":"tileset_campus","path":"tilesets/tileset_campus/tileset_campus.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRBackgroundLayer":"","%Name":"Background","animationFPS":15.0,"animationSpeedType":0,"colour":4278190080,"depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"hspeed":0.0,"htiled":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"Background","properties":[],"resourceType":"GMRBackgroundLayer","resourceVersion":"2.0","spriteId":null,"stretch":false,"userdefinedAnimFPS":false,"userdefinedDepth":false,"visible":true,"vspeed":0.0,"vtiled":false,"x":0,"y":0,},
   ],
@@ -36,10 +35,10 @@
   "resourceType":"GMRoom",
   "resourceVersion":"2.0",
   "roomSettings":{
-    "Height":1920,
+    "Height":1536,
     "inheritRoomSettings":false,
     "persistent":false,
-    "Width":1920,
+    "Width":1728,
   },
   "sequenceId":null,
   "views":[
