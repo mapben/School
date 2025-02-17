@@ -13,7 +13,43 @@ global.facilities = []; // Stores purchased facilities
 global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
 
+
+global.dog_spawn_area = {
+    x_min: 200,  // Left boundary
+    x_max: 3800,  // Right boundary
+    y_min: 200,  // Top boundary
+    y_max: 3800   // Bottom boundary
+};
+global.spawned_dogs = []; // Stores active dog instances
+
 draw_text(x, y, "Week: " + string(global.current_week));
+
+function scr_spawn_dogs() {
+    
+	for (var i = 0; i < array_length(global.spawned_dogs); i++) {
+        if (instance_exists(global.spawned_dogs[i])) {
+            instance_destroy(global.spawned_dogs[i]);
+        }
+    }
+    global.spawned_dogs = [];
+
+    var student_count = array_length(global.students);
+    
+    for (var i = 0; i < student_count; i++) {
+        var spawn_x = irandom_range(global.dog_spawn_area.x_min, global.dog_spawn_area.x_max);
+        var spawn_y = irandom_range(global.dog_spawn_area.y_min, global.dog_spawn_area.y_max);
+        var dog_type = choose(obj_dog1, obj_dog2);
+        
+        var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", dog_type);
+        array_push(global.spawned_dogs, new_dog);
+
+        // Assign random walk distance and speed
+        new_dog.walk_distance = irandom_range(50, 120);
+        new_dog.move_speed = random_range(1.0, 2.5);
+        new_dog.target_x = new_dog.x + new_dog.walk_distance;
+    }
+}
+
 
 function array_average(arr) {
     var sum = 0;
@@ -35,11 +71,28 @@ function add_student() {
         id: global.next_student_id,
         name: "Dog " + string(global.next_student_id),
         grade: irandom_range(50, 100),
-        happiness: irandom_range(60, 100) // Happiness starts between 60-100
+        happiness: irandom_range(60, 100)
     };
     array_push(global.students, student);
     global.next_student_id += 1;
+
+    scr_spawn_dogs(); // Refresh campus visuals
 }
+
+function remove_student(student_id) {
+    var index = -1;
+    for (var i = 0; i < array_length(global.students); i++) {
+        if (global.students[i].id == student_id) {
+            index = i;
+            break;
+        }
+    }
+    if (index != -1) {
+        array_delete(global.students, index, 1);
+        scr_spawn_dogs(); // Refresh campus visuals
+    }
+}
+
 
 function add_faculty() {
     var faculty = {
@@ -53,23 +106,9 @@ function add_faculty() {
 
 
 // Add some initial students and faculty
-for (var i = 0; i < 10; i++) add_student();
-for (var j = 0; j < 5; j++) add_faculty();
+for (var i = 0; i < 5; i++) add_student();
+for (var j = 0; j < 2; j++) add_faculty();
 
-
-// Function to remove a student by ID
-function remove_student(student_id) {
-    var index = -1;
-    for (var i = 0; i < array_length(global.students); i++) {
-        if (global.students[i].id == student_id) {
-            index = i;
-            break;
-        }
-    }
-    if (index != -1) {
-        array_delete(global.students, index, 1);
-    }
-}
 
 // Function to remove a faculty member by ID
 function remove_faculty(faculty_id) {
