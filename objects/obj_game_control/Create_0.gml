@@ -40,16 +40,12 @@ function scr_spawn_dogs() {
         
         var dog_type = global.students[i].type; // Retrieve stored type
         
-		if(dog_type == 1)
-	        var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", obj_dog1);
-		if(dog_type == 2)
-	        var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", obj_dog2);
+        var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", dog_type);
         new_dog.dog_name = global.students[i].name; // Assign name to instance
         
         array_push(global.spawned_dogs, new_dog);
     }
 }
-
 
 
 function array_average(arr) {
@@ -70,14 +66,14 @@ global.next_faculty_id = 1;  // Unique ID for new faculty members
 global.available_dog_names = ["Buddy", "Max", "Charlie", "Bella", "Luna", "Rocky", "Daisy", "Milo", "Cooper", "Bailey", "Teddy", "Lucy", "Willow", "Bear"];
 
 function add_student() {
-
+    
     // Assign a random name
     var name_index = irandom(array_length(global.available_dog_names) - 1);
     var selected_name = global.available_dog_names[name_index];
     array_delete(global.available_dog_names, name_index, 1);
-	
+
     // Assign a random type
-    var dog_type = choose(1, 2);
+    var dog_type = choose(obj_dog1, obj_dog2);
 
     // Create the student
     var student = {
@@ -93,7 +89,6 @@ function add_student() {
 
     scr_spawn_dogs(); // Refresh campus visuals
 }
-
 
 function remove_student(student_id) {
     var index = -1;
