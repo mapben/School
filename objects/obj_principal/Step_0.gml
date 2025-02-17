@@ -24,12 +24,8 @@ if (vx == 0 && vy == 0) {
 
 // If moving
 if (vx != 0 || vy != 0) {
-	if !collision_point(x + vx, y, obj_par_environment, true, true) {
-		x += vx;
-	}
-	if !collision_point(x , y + vy, obj_par_environment, true, true) {
-		y += vy;
-	}
+	x += vx;
+	y += vy;
 	// Change walking Sprite based on direction
 	if (vx > 0) {
 		sprite_index = spr_principal_right;
@@ -50,7 +46,7 @@ if (vx != 0 || vy != 0) {
 }
 
 // Depth sorting
-depth =-y;
+depth = -y;
 
 // Keep Camera Centered on the Player
 var cam = view_camera[0]; // Get the camera ID
