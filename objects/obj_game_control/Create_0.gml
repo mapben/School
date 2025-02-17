@@ -1,7 +1,6 @@
 /// @description 114
 // You can write your code in this editor
 // Initialize Global Variables
-global.player_name = "";
 
 global.current_week = 1; // Tracks the current game week
 global.school_budget = 50000; // Starting money for the school
@@ -25,8 +24,7 @@ global.spawned_dogs = []; // Stores active dog instances
 draw_text(x, y, "Week: " + string(global.current_week));
 
 function scr_spawn_dogs() {
-    
-	for (var i = 0; i < array_length(global.spawned_dogs); i++) {
+    for (var i = 0; i < array_length(global.spawned_dogs); i++) {
         if (instance_exists(global.spawned_dogs[i])) {
             instance_destroy(global.spawned_dogs[i]);
         }
@@ -41,14 +39,12 @@ function scr_spawn_dogs() {
         var dog_type = choose(obj_dog1, obj_dog2);
         
         var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", dog_type);
+        new_dog.dog_name = global.students[i].name; // Assign name to instance
+        
         array_push(global.spawned_dogs, new_dog);
-
-        // Assign random walk distance and speed
-        new_dog.walk_distance = irandom_range(50, 120);
-        new_dog.move_speed = random_range(1.0, 2.5);
-        new_dog.target_x = new_dog.x + new_dog.walk_distance;
     }
 }
+
 
 
 function array_average(arr) {
@@ -66,17 +62,26 @@ global.faculty = [];  // Stores faculty objects
 global.next_student_id = 1; // Unique ID for new students
 global.next_faculty_id = 1;  // Unique ID for new faculty members
 
+global.available_dog_names = ["Buddy", "Max", "Charlie", "Bella", "Luna", "Rocky", "Daisy", "Milo", "Cooper", "Bailey", "Teddy", "Lucy", "Willow", "Bear"];
+
 function add_student() {
+
+    // Select a random name and remove it from the available names
+    var name_index = irandom(array_length(global.available_dog_names) - 1);
+    var selected_name = global.available_dog_names[name_index];
+    array_delete(global.available_dog_names, name_index, 1);
+
+    // Create a new student
     var student = {
         id: global.next_student_id,
-        name: "Dog " + string(global.next_student_id),
+        name: selected_name,
         grade: irandom_range(50, 100),
         happiness: irandom_range(60, 100)
     };
+    
     array_push(global.students, student);
     global.next_student_id += 1;
 
-    scr_spawn_dogs(); // Refresh campus visuals
 }
 
 function remove_student(student_id) {
