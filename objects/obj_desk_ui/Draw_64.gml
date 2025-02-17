@@ -42,8 +42,7 @@ if (global.show_faculty) {
     y_offset += 30; // Add spacing
     for (var j = 0; j < array_length(global.faculty); j++) {
         y_offset += 20;
-        draw_text(panel_x + 180, y_offset, global.faculty[j].name + " - Happiness: " + string(global.faculty[j].happiness) + 
-                  " - Happiness: " + string(global.faculty[j].happiness) + "%");
+        draw_text(panel_x + 180, y_offset, global.faculty[j].name + " - Happiness: " + string(global.faculty[j].happiness) + "%");
     }
 }
 
@@ -60,3 +59,12 @@ draw_set_color(c_white);
 draw_text(btn_x + 25, btn_y + 13, "Return to Campus");
 
 draw_text(-50, -30, "Principal: " + global.player_name);
+
+draw_set_color(c_black);
+var weeks_until_exam = 5 - (global.current_week mod 5);
+var weeks_until_break = 10 - (global.current_week mod 10);
+var weeks_until_admissions = 20 - (global.current_week mod 20);
+
+draw_text(300, 100, "Next Exam in: " + string(weeks_until_exam) + " weeks");
+draw_text(300, 120, "Next Break in: " + string(weeks_until_break) + " weeks");
+draw_text(300, 140, "Next Admissions Week in: " + string(weeks_until_admissions) + " weeks");

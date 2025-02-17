@@ -12,7 +12,6 @@ if (mouse_check_button_pressed(mb_left) &&
     mx > btn_x && mx < btn_x + btn_width &&
     my > btn_y && my < btn_y + btn_height) {
     
-	show_debug_message(global.player_name);
     if (string_length(global.player_name) > 0) {
         room_goto(rm_campus); // Start the game
     } else {
