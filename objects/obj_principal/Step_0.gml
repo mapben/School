@@ -24,6 +24,10 @@ if (vx == 0 && vy == 0) {
 
 // If moving
 if (vx != 0 || vy != 0) {
+	if(place_meeting(x + vx, y + vy, obj_empty_land)) {
+		vx = 0;
+		vy = 0;
+	}
 	x += vx;
 	y += vy;
 	// Change walking Sprite based on direction

@@ -13,7 +13,7 @@ if (mouse_check_button_pressed(mb_left) &&
     my > btn_y && my < btn_y + btn_height) {
     
     if (string_length(global.player_name) > 0) {
-        room_goto(rm_campus); // Start the game
+        room_goto(rm_school); // Start the game
     } else {
         show_message("Please enter a name!");
     }

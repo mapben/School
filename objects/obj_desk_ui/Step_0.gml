@@ -25,5 +25,5 @@ if (mouse_check_button_pressed(mb_left) &&
     mx > btn_x && mx < btn_x + btn_width &&
     my > btn_y && my < btn_y + btn_height) {
     
-    room_goto(rm_campus); // Switch back to the campus room
+    room_goto(rm_school); // Switch back to the campus room
 }

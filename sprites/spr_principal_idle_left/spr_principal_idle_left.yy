@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_principal_idle_left",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":140,
   "bbox_left":27,
   "bbox_right":71,
-  "bbox_top":9,
+  "bbox_top":110,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

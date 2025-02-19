@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_principal_front",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":143,
   "bbox_left":6,
   "bbox_right":86,
-  "bbox_top":12,
+  "bbox_top":115,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_principal_back",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":143,
   "bbox_left":9,
   "bbox_right":89,
-  "bbox_top":6,
+  "bbox_top":110,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
