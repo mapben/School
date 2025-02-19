@@ -2,6 +2,8 @@
 // You can write your code in this editor
 // Initialize Global Variables
 
+randomise();
+
 global.current_week = 1; // Tracks the current game week
 global.school_budget = 50000; // Starting money for the school
 global.weekly_income = 10000; // Revenue per week
@@ -11,7 +13,6 @@ global.notification_list = []; // Stores game notifications
 global.facilities = []; // Stores purchased facilities
 global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
-
 
 global.dog_spawn_area = {
     x_min: 200,  // Left boundary
