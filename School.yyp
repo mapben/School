@@ -45,6 +45,7 @@
   },
   "name":"School",
   "resources":[
+    {"id":{"name":"fnt_regular","path":"fonts/fnt_regular/fnt_regular.yy",},},
     {"id":{"name":"obj_advance_button","path":"objects/obj_advance_button/obj_advance_button.yy",},},
     {"id":{"name":"obj_advance_confirm_popup","path":"objects/obj_advance_confirm_popup/obj_advance_confirm_popup.yy",},},
     {"id":{"name":"obj_desk_ui","path":"objects/obj_desk_ui/obj_desk_ui.yy",},},
@@ -61,9 +62,9 @@
     {"id":{"name":"obj_remove_student_button","path":"objects/obj_remove_student_button/obj_remove_student_button.yy",},},
     {"id":{"name":"obj_school_building","path":"objects/obj_school_building/obj_school_building.yy",},},
     {"id":{"name":"obj_welcome_control","path":"objects/obj_welcome_control/obj_welcome_control.yy",},},
-    {"id":{"name":"rm_campus_pixel","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},},
     {"id":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
     {"id":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
+    {"id":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
     {"id":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
     {"id":{"name":"spr_advance_button","path":"sprites/spr_advance_button/spr_advance_button.yy",},},
     {"id":{"name":"spr_backgroundTile","path":"sprites/spr_backgroundTile/spr_backgroundTile.yy",},},
@@ -96,7 +97,7 @@
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
     {"roomId":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
-    {"roomId":{"name":"rm_campus_pixel","path":"rooms/rm_campus_pixel/rm_campus_pixel.yy",},},
+    {"roomId":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
