@@ -1,26 +1,16 @@
-var panel_x = 30;
-var panel_y = 30;
+var panel_x = 150;
+var panel_y = 100;
 var panel_width = 400;
 var panel_height = 300;
 
-// Draw Panel Background
-draw_set_color(make_color_rgb(230, 230, 230));
-draw_rectangle(panel_x, panel_y, panel_x + panel_width, panel_y + panel_height, false);
-
-// Title Bar
-draw_set_color(make_color_rgb(50, 50, 50));
-draw_rectangle(panel_x, panel_y, panel_x + panel_width, panel_y + 40, false);
-draw_set_color(c_white);
-draw_text(panel_x + 10, panel_y + 10, "Principal's Desk");
-
 // School Information
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_text(panel_x + 10, panel_y + 60, "School Facility Grade: " + global.facility_grade);
 draw_text(panel_x + 10, panel_y + 90, "Overall Student Grade: " + global.overall_student_grade);
 draw_text(panel_x + 10, panel_y + 120, "School Budget: $" + string(global.school_budget));
 
 // Student Drop-Down Toggle
-draw_set_color(c_black);
+draw_set_color(c_white);
 draw_text(panel_x + 10, panel_y + 160, "Students [expand]");
 
 // Faculty Drop-Down Toggle
@@ -60,11 +50,11 @@ draw_text(btn_x + 25, btn_y + 13, "Return to Campus");
 
 draw_text(-50, -30, "Principal: " + global.player_name);
 
-draw_set_color(c_black);
+draw_set_color(c_white);
 var weeks_until_exam = 5 - (global.current_week mod 5);
 var weeks_until_break = 10 - (global.current_week mod 10);
 var weeks_until_admissions = 20 - (global.current_week mod 20);
 
-draw_text(300, 100, "Next Exam in: " + string(weeks_until_exam) + " weeks");
-draw_text(300, 120, "Next Break in: " + string(weeks_until_break) + " weeks");
-draw_text(300, 140, "Next Admissions Week in: " + string(weeks_until_admissions) + " weeks");
+draw_text(400, 120, "Next Exam in: " + string(weeks_until_exam) + " weeks");
+draw_text(400, 140, "Next Break in: " + string(weeks_until_break) + " weeks");
+draw_text(400, 160, "Next Admissions Week in: " + string(weeks_until_admissions) + " weeks");
