@@ -7,6 +7,23 @@ moveUp = keyboard_check(vk_up);
 moveLeft = keyboard_check(vk_left);
 moveDown = keyboard_check(vk_down);
 
+if keyboard_check(ord("W"))
+{
+    moveUp = 1;
+}
+if keyboard_check(ord("A"))
+{
+    moveLeft = 1;
+}
+if keyboard_check(ord("S"))
+{
+    moveDown = 1;
+
+}if keyboard_check(ord("D"))
+{
+    moveRight = 1;
+}
+
 // Calculate movement
 vx = ((moveRight - moveLeft) * walkSpeed);
 vy = ((moveDown - moveUp) * walkSpeed);
