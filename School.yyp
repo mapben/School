@@ -77,6 +77,8 @@
     {"id":{"name":"spr_dialogue_box","path":"sprites/spr_dialogue_box/spr_dialogue_box.yy",},},
     {"id":{"name":"spr_dog1","path":"sprites/spr_dog1/spr_dog1.yy",},},
     {"id":{"name":"spr_dog2","path":"sprites/spr_dog2/spr_dog2.yy",},},
+    {"id":{"name":"spr_dog3","path":"sprites/spr_dog3/spr_dog3.yy",},},
+    {"id":{"name":"spr_dog4","path":"sprites/spr_dog4/spr_dog4.yy",},},
     {"id":{"name":"spr_empty_land","path":"sprites/spr_empty_land/spr_empty_land.yy",},},
     {"id":{"name":"spr_littleTownTile","path":"sprites/spr_littleTownTile/spr_littleTownTile.yy",},},
     {"id":{"name":"spr_new_building","path":"sprites/spr_new_building/spr_new_building.yy",},},
