@@ -31,7 +31,6 @@ if (global.current_week mod 20 == 0) {
     enroll_new_students();
 }
 
-
 // Happiness modifiers based on facility grade
 var happiness_boost = 0;
 switch (global.facility_grade) {
@@ -53,4 +52,5 @@ for (var j = 0; j < array_length(global.faculty); j++) {
     global.faculty[j].happiness += happiness_boost + irandom_range(-5, 5);
     global.faculty[j].happiness = clamp(global.faculty[j].happiness, 0, 100);
 }
+
 

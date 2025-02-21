@@ -204,3 +204,11 @@ function improve_happiness() {
         global.faculty[j].happiness = clamp(global.faculty[j].happiness, 0, 100);
     }
 }
+
+global.tasks = [
+    { name: "Enroll 5 Students", condition: function() { return array_length(global.students) >= 5; }, reward: 1000, completed: false },
+    { name: "Reach a Facility Grade of B", condition: function() { return global.facility_grade == "B" || global.facility_grade == "A"; }, reward: 1500, completed: false },
+    { name: "Hold 3 Exams", condition: function() { return global.current_week >= 15; }, reward: 500, completed: false }
+];
+
+global.task_notifications = []; // Stores active task updates
