@@ -8,5 +8,5 @@ draw_set_halign(fa_center);
 draw_set_color(c_white); // White for visibility
 
 // Draw the text slightly above the dog
-draw_text(x, y - 80, dog_name);
+draw_text(x, y - 50, dog_name);
 draw_set_halign(fa_left);

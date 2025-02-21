@@ -25,6 +25,8 @@ global.spawned_dogs = []; // Stores active dog instances
 draw_text(x, y, "Week: " + string(global.current_week));
 
 function scr_spawn_dogs() {
+	if(room != rm_school)
+		return;
     // Remove previously spawned dogs
     for (var i = 0; i < array_length(global.spawned_dogs); i++) {
         if (instance_exists(global.spawned_dogs[i])) {
@@ -74,7 +76,7 @@ function add_student() {
     array_delete(global.available_dog_names, name_index, 1);
 
     // Assign a random type
-    var dog_type = choose(obj_dog1, obj_dog2);
+    var dog_type = choose(obj_dog1, obj_dog2, obj_dog4);
 
     // Create the student
     var student = {
@@ -143,7 +145,7 @@ function calculate_overall_student_grade() {
 
 
 // Add some initial students and faculty
-for (var i = 0; i < 5; i++) add_student();
+for (var i = 0; i < 3; i++) add_student();
 for (var j = 0; j < 2; j++) add_faculty();
 
 

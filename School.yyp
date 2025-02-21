@@ -52,7 +52,7 @@
     {"id":{"name":"obj_dialogue_box","path":"objects/obj_dialogue_box/obj_dialogue_box.yy",},},
     {"id":{"name":"obj_dog1","path":"objects/obj_dog1/obj_dog1.yy",},},
     {"id":{"name":"obj_dog2","path":"objects/obj_dog2/obj_dog2.yy",},},
-    {"id":{"name":"obj_dog3","path":"objects/obj_dog3/obj_dog3.yy",},},
+    {"id":{"name":"obj_dog4","path":"objects/obj_dog4/obj_dog4.yy",},},
     {"id":{"name":"obj_empty_land","path":"objects/obj_empty_land/obj_empty_land.yy",},},
     {"id":{"name":"obj_facility_menu","path":"objects/obj_facility_menu/obj_facility_menu.yy",},},
     {"id":{"name":"obj_game_control","path":"objects/obj_game_control/obj_game_control.yy",},},
