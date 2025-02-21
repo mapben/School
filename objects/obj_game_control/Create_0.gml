@@ -74,7 +74,7 @@ function add_student() {
     array_delete(global.available_dog_names, name_index, 1);
 
     // Assign a random type
-    var dog_type = choose(obj_dog1, obj_dog2);
+    var dog_type = choose(obj_dog1, obj_dog2, obj_dog4);
 
     // Create the student
     var student = {
@@ -143,7 +143,7 @@ function calculate_overall_student_grade() {
 
 
 // Add some initial students and faculty
-for (var i = 0; i < 5; i++) add_student();
+for (var i = 0; i < 3; i++) add_student();
 for (var j = 0; j < 2; j++) add_faculty();
 
 
@@ -206,6 +206,7 @@ function improve_happiness() {
 }
 
 global.tasks = [
+    { name: "Enroll 5 Students", condition: function() { return array_length(global.students) >= 5; }, reward: 1000, completed: false },
     { name: "Enroll 5 Students", condition: function() { return array_length(global.students) >= 5; }, reward: 1000, completed: false },
     { name: "Reach a Facility Grade of B", condition: function() { return global.facility_grade == "B" || global.facility_grade == "A"; }, reward: 1500, completed: false },
     { name: "Hold 3 Exams", condition: function() { return global.current_week >= 15; }, reward: 500, completed: false }
