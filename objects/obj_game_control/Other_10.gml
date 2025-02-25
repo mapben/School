@@ -54,3 +54,28 @@ for (var j = 0; j < array_length(global.faculty); j++) {
 }
 
 
+// Calculate Weekly Income & Expenses
+global.weekly_income = array_length(global.students) * global.student_tuition;
+global.weekly_expense = global.faculty_salaries + (array_length(global.facilities) * 500); // More facilities = more costs
+
+global.school_budget += global.weekly_income - global.weekly_expense; // Update budget
+
+// Show financial summary
+var finance_summary = "Weekly Report:\n" +
+                      "Tuition Income: $" + string(global.weekly_income) + "\n" +
+                      "Total Expenses: $" + string(global.weekly_expense) + "\n" +
+                      "Remaining Budget: $" + string(global.school_budget);
+show_message(finance_summary);
+
+// Trigger a warning if budget is below $2000 but still positive
+if (global.school_budget > 0 && global.school_budget < 2000) {
+    show_message("Warning! The school is running low on funds. Consider improving grades to increase tuition!");
+}
+
+// If the budget is negative, trigger game over
+if (global.school_budget < 0) {
+    show_message("The school has gone bankrupt! Game Over.");
+    game_end(); // Ends the game
+}
+
+

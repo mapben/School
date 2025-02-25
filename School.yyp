@@ -60,6 +60,8 @@
     {"id":{"name":"obj_new_building","path":"objects/obj_new_building/obj_new_building.yy",},},
     {"id":{"name":"obj_par_dog","path":"objects/obj_par_dog/obj_par_dog.yy",},},
     {"id":{"name":"obj_par_environment","path":"objects/obj_par_environment/obj_par_environment.yy",},},
+    {"id":{"name":"obj_piano","path":"objects/obj_piano/obj_piano.yy",},},
+    {"id":{"name":"obj_ping_pong_table","path":"objects/obj_ping_pong_table/obj_ping_pong_table.yy",},},
     {"id":{"name":"obj_principal","path":"objects/obj_principal/obj_principal.yy",},},
     {"id":{"name":"obj_remove_student_button","path":"objects/obj_remove_student_button/obj_remove_student_button.yy",},},
     {"id":{"name":"obj_school_building","path":"objects/obj_school_building/obj_school_building.yy",},},

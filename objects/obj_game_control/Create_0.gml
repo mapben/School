@@ -5,14 +5,18 @@
 randomise();
 
 global.current_week = 1; // Tracks the current game week
-global.school_budget = 50000; // Starting money for the school
-global.weekly_income = 10000; // Revenue per week
-global.weekly_expenses = 8000; // Base weekly expenses
+global.school_budget = 50000;
+global.weekly_expense = 5000; // Base expense per week
+global.weekly_income = 7000;  // Initial tuition earnings
+global.student_tuition = 1000; // Earnings per student
+global.faculty_salaries = 3000; // Faculty salaries (fixed)
 global.special_event = ""; // Stores random events that occur
 global.notification_list = []; // Stores game notifications
 global.facilities = []; // Stores purchased facilities
 global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
+
+
 
 global.dog_spawn_area = {
     x_min: 200,  // Left boundary
@@ -188,12 +192,17 @@ function calculate_facility_grade() {
 }
 
 function enroll_new_students() {
-    var new_students = irandom_range(3, 6); // Random number of new dogs
+    var new_students = 2; // Base enrollment
+    if (global.overall_student_grade == "A") new_students += 5;
+    else if (global.overall_student_grade == "B") new_students += 3;
+    else if (global.overall_student_grade == "C") new_students += 1;
+
     for (var i = 0; i < new_students; i++) {
         add_student();
     }
-    show_message(string(new_students) + " new dogs have joined the school!");
+    show_message(string(new_students) + " new students have enrolled due to strong academic performance!");
 }
+
 
 function improve_happiness() {
     for (var i = 0; i < array_length(global.students); i++) {

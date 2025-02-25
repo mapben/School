@@ -12,7 +12,7 @@ if (mouse_check_button_pressed(mb_left)) {
             global.school_budget -= 20000;
 			var new_facility = { type: "classroom" };
 			array_push(global.facilities, new_facility);
-			calculate_facility_grade();
+			obj_game_control.calculate_facility_grade();
 			instance_create_layer(x, y, "Instances", obj_new_building);
 			instance_destroy();
 
@@ -22,7 +22,7 @@ if (mouse_check_button_pressed(mb_left)) {
             global.school_budget -= 30000;
 			var new_facility = { type: "gym" };
 			array_push(global.facilities, new_facility);
-			calculate_facility_grade();
+			obj_game_control.calculate_facility_grade();
 			instance_create_layer(x, y, "Instances", obj_new_building);
 			instance_destroy();
         }
