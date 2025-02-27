@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_piano",
+  "%Name":"obj_swimming_pool",
   "eventList":[],
   "managed":true,
-  "name":"obj_piano",
+  "name":"obj_swimming_pool",
   "overriddenProperties":[],
   "parent":{
     "name":"environment",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_piano",
-    "path":"sprites/spr_piano/spr_piano.yy",
+    "name":"spr_swimming_pool",
+    "path":"sprites/spr_swimming_pool/spr_swimming_pool.yy",
   },
   "spriteMaskId":null,
   "visible":true,

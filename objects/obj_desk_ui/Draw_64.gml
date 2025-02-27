@@ -5,8 +5,8 @@ var panel_height = 300;
 
 // School Information
 draw_set_color(c_white);
-draw_text(panel_x - 20, panel_y + 30, "School Facility Grade: " + global.facility_grade);
-draw_text(panel_x - 20, panel_y + 60, "Overall Student Grade: " + global.overall_student_grade);
+draw_text(panel_x - 20, panel_y + 30, "Overall Student Grade: " + global.overall_student_grade);
+draw_text(panel_x - 20, panel_y + 60, "School Facility Grade: " + global.facility_grade);
 draw_text(panel_x - 20, panel_y + 90, "School Budget: $" + string(global.school_budget));
 draw_text(panel_x - 20, panel_y + 120, "Weekly Income: $" + string(global.weekly_income));
 draw_text(panel_x - 20, panel_y + 150, "Weekly Expenses: $" + string(global.weekly_expense));
@@ -23,11 +23,11 @@ draw_text(panel_x - 20, panel_y + 280, "Faculty [expand]");
 
 
 // If students list is expanded, show all students
-var y_offset = 180;
+var y_offset = 250;
 if (global.show_students) {
     for (var i = 0; i < array_length(global.students); i++) {
         y_offset += 20;
-        draw_text(panel_x + 180, y_offset, global.students[i].name + " - Grade: " + string(global.students[i].grade) + 
+        draw_text(panel_x + 250, y_offset, global.students[i].name + " - Grade: " + string(global.students[i].grade) + 
                   " - Happiness: " + string(global.students[i].happiness) + "%");
     }
 }
@@ -37,7 +37,7 @@ if (global.show_faculty) {
     y_offset += 30; // Add spacing
     for (var j = 0; j < array_length(global.faculty); j++) {
         y_offset += 20;
-        draw_text(panel_x + 180, y_offset, global.faculty[j].name + " - Happiness: " + string(global.faculty[j].happiness) + "%");
+        draw_text(panel_x + 250, y_offset, global.faculty[j].name + " - Happiness: " + string(global.faculty[j].happiness) + "%");
     }
 }
 

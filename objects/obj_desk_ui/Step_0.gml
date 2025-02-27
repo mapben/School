@@ -5,14 +5,18 @@ var my = device_mouse_y_to_gui(0);
 var panel_x = 30;
 var panel_y = 30;
 
-// Detect clicks on the student drop-down
-if (mouse_check_button_pressed(mb_left) && mx > panel_x + 10 && mx < panel_x + 200 && my > panel_y + 160 && my < panel_y + 180) {
-    global.show_students = !global.show_students; // Toggle
+// Detect Student List Button Click
+if (mouse_check_button_pressed(mb_left) &&
+    mx > 215 && mx < 280 &&
+    my > 350 && my < 380) {
+    global.show_students = !global.show_students; // Toggle visibility
 }
 
-// Detect clicks on the faculty drop-down
-if (mouse_check_button_pressed(mb_left) && mx > panel_x + 10 && mx < panel_x + 200 && my > panel_y + 190 && my < panel_y + 210) {
-    global.show_faculty = !global.show_faculty; // Toggle
+// Detect Faculty List Button Click
+if (mouse_check_button_pressed(mb_left) &&
+    mx > 210 && mx < 270 &&
+    my > 385 && my < 415) {
+    global.show_faculty = !global.show_faculty; // Toggle visibility
 }
 
 var btn_x = 150;

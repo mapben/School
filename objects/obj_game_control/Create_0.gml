@@ -151,7 +151,7 @@ function calculate_overall_student_grade() {
 // Add some initial students and faculty
 for (var i = 0; i < 3; i++) add_student();
 for (var j = 0; j < 2; j++) add_faculty();
-
+calculate_overall_student_grade();
 
 
 // Function to remove a faculty member by ID
@@ -174,11 +174,11 @@ function calculate_facility_grade() {
     // Assign a score for each facility type
     for (var i = 0; i < array_length(global.facilities); i++) {
         switch (global.facilities[i].type) {
-            case "classroom": total_score += 3; break;
-            case "gym": total_score += 4; break;
-            case "vet_clinic": total_score += 5; break;
-            case "playground": total_score += 2; break;
-            case "swimming_pool": total_score += 4; break;
+            case "piano": total_score += 3; break;
+            case "gym": total_score += 20; break;
+            case "soccer field": total_score += 10; break;
+            case "ping pong table": total_score += 2; break;
+            case "swimming tpool": total_score += 12; break;
             default: total_score += 1; break;
         }
     }
@@ -224,27 +224,49 @@ global.tasks = [
 
 global.task_notifications = []; // Stores active task updates
 
+function apply_bad_event_impact() {
+    var happiness_loss = irandom_range(5, 15); // Random decrease
+    var grade_loss = irandom_range(3, 10);
+
+    // Reduce student happiness & grades
+    for (var i = 0; i < array_length(global.students); i++) {
+        global.students[i].happiness -= happiness_loss;
+        global.students[i].happiness = clamp(global.students[i].happiness, 0, 100);
+        
+        global.students[i].grade -= grade_loss;
+        global.students[i].grade = clamp(global.students[i].grade, 0, 100);
+    }
+
+    // Reduce faculty happiness
+    for (var j = 0; j < array_length(global.faculty); j++) {
+        global.faculty[j].happiness -= happiness_loss;
+        global.faculty[j].happiness = clamp(global.faculty[j].happiness, 0, 100);
+    }
+
+}
+
 function show_board_chair_event() {
-    show_message("The Chair of the Board, Madam Six, is visiting the school!");
+    show_message("The Chair of the Board, is visiting the school!");
 
     // Create the board chair sprite in the middle of the screen
-    var board_sprite = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_madam_six);
+    var board_sprite = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_chair);
 
     var valid_response = false;
     
     while (!valid_response) {
-        var response = get_string("Madam Six, wants to inspect the school. What do you do?\n\nOption 1: 'Give a Tour'", "");
+        var response = get_string("The Chair wants to inspect the school. What do you do?\n\nOption 1: 'Give a grand performance'", "");
 
         if (string_lower(response) == "1" or string_lower(response) == "Give a tour" or string_lower(response) == "give a tour") {
             valid_response = true;
-            show_message("You confidently give a grand tour. The Chair is impressed and donates $2000!");
+            show_message("You led all students and faculties to give a grand performance. The Chair is impressed and donates $2000! Everyone is less happy and grades drop");
             global.school_budget += 2000;
+			apply_bad_event_impact();
         } else {
-            show_message("The Chair of the Board frowns. That's not a valid action. Try again!");
+            show_message("You didn't pick a valid action. Try again!");
         }
     }
 
-    // Remove the board chair sprite after a few seconds
+    // Remove the board chair sprite after a few second
     alarm[1] = room_speed * 3; // Set a timer to remove after 3 seconds
 }
 

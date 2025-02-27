@@ -78,7 +78,6 @@ if (global.school_budget < 0) {
     game_end(); // Ends the game
 }
 
-// Random chance of board visit (5% per week)
-if (irandom(100) < 10) { 
+if (irandom(100) < 20) { 
     show_board_chair_event();
 }

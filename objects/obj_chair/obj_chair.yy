@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_piano",
-  "eventList":[],
+  "%Name":"obj_chair",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_piano",
+  "name":"obj_chair",
   "overriddenProperties":[],
   "parent":{
-    "name":"environment",
-    "path":"folders/Objects/environment.yy",
+    "name":"characters",
+    "path":"folders/Objects/characters.yy",
   },
-  "parentObjectId":{
-    "name":"obj_par_environment",
-    "path":"objects/obj_par_environment/obj_par_environment.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_piano",
-    "path":"sprites/spr_piano/spr_piano.yy",
+    "name":"spr_chair",
+    "path":"sprites/spr_chair/spr_chair.yy",
   },
   "spriteMaskId":null,
   "visible":true,

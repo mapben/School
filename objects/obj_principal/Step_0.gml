@@ -2,6 +2,12 @@
 // You can write your code in this editor
 
 // Check keys for movement
+
+if(global.choosing == true)
+{
+	return;
+}
+
 moveRight = keyboard_check(vk_right);
 moveUp = keyboard_check(vk_up);
 moveLeft = keyboard_check(vk_left);
@@ -42,8 +48,13 @@ if (vx == 0 && vy == 0) {
 // If moving
 if (vx != 0 || vy != 0) {
 	if(place_meeting(x + vx, y + vy, obj_empty_land)) {
+		global.build_x = instance_place(x + vx, y + vy, obj_empty_land).x;
+		global.build_y = instance_place(x + vx, y + vy, obj_empty_land).y;
+		instance_destroy(instance_place(x + vx, y + vy, obj_empty_land));
+		global.choosing = true;
 		vx = 0;
 		vy = 0;
+		instance_create_layer(x, y, "Instances", obj_facility_menu);
 	}
 	x += vx;
 	y += vy;

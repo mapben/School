@@ -3,7 +3,7 @@
   "%Name":"spr_principal_right",
   "bboxMode":2,
   "bbox_bottom":143,
-  "bbox_left":0,
+  "bbox_left":24,
   "bbox_right":95,
   "bbox_top":110,
   "collisionKind":1,

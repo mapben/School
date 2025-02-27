@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_piano",
+  "%Name":"obj_soccer_field",
   "eventList":[],
   "managed":true,
-  "name":"obj_piano",
+  "name":"obj_soccer_field",
   "overriddenProperties":[],
   "parent":{
     "name":"environment",
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_piano",
-    "path":"sprites/spr_piano/spr_piano.yy",
+    "name":"spr_soccer_field",
+    "path":"sprites/spr_soccer_field/spr_soccer_field.yy",
   },
   "spriteMaskId":null,
   "visible":true,

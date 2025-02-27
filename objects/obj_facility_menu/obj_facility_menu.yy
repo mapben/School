@@ -9,8 +9,8 @@
   "name":"obj_facility_menu",
   "overriddenProperties":[],
   "parent":{
-    "name":"environment",
-    "path":"folders/Objects/environment.yy",
+    "name":"GUI Elements",
+    "path":"folders/Objects/GUI Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,

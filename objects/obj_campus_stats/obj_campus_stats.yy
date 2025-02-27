@@ -1,15 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_madam_six",
+  "%Name":"obj_campus_stats",
   "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":2,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_madam_six",
+  "name":"obj_campus_stats",
   "overriddenProperties":[],
   "parent":{
-    "name":"characters",
-    "path":"folders/Objects/characters.yy",
+    "name":"GUI Elements",
+    "path":"folders/Objects/GUI Elements.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -29,10 +29,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_madam_six",
-    "path":"sprites/spr_madam_six/spr_madam_six.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }
