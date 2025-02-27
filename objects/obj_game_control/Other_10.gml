@@ -78,6 +78,6 @@ if (global.school_budget < 0) {
     game_end(); // Ends the game
 }
 
-if (irandom(100) < 20) { 
+if (irandom(100) < 100) { 
     show_board_chair_event();
 }

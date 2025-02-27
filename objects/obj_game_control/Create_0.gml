@@ -16,6 +16,7 @@ global.facilities = []; // Stores purchased facilities
 global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
 
+global.board_chair_response_given = true;
 
 
 global.dog_spawn_area = {
@@ -245,28 +246,28 @@ function apply_bad_event_impact() {
 
 }
 
+
 function show_board_chair_event() {
-    show_message("The Chair of the Board, is visiting the school!");
+    show_message("THE CHAIR OF THE SCHOOL'S BOARD is visiting the school!");
 
-    // Create the board chair sprite in the middle of the screen
-    var board_sprite = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_chair);
+    / Get camera position
+    var cam_x = camera_get_view_x(view_camera[0]);
+    var cam_y = camera_get_view_y(view_camera[0]);
+    var cam_width = camera_get_view_width(view_camera[0]);
+    var cam_height = camera_get_view_height(view_camera[0]);
 
-    var valid_response = false;
-    
-    while (!valid_response) {
-        var response = get_string("The Chair wants to inspect the school. What do you do?\n\nOption 1: 'Give a grand performance'", "");
+    // Calculate center of camera view
+    var spawn_x = cam_x + (cam_width / 2);
+    var spawn_y = cam_y + (cam_height / 2);
 
-        if (string_lower(response) == "1" or string_lower(response) == "Give a tour" or string_lower(response) == "give a tour") {
-            valid_response = true;
-            show_message("You led all students and faculties to give a grand performance. The Chair is impressed and donates $2000! Everyone is less happy and grades drop");
-            global.school_budget += 2000;
-			apply_bad_event_impact();
-        } else {
-            show_message("You didn't pick a valid action. Try again!");
-        }
-    }
+    // Create the board chair sprite in the center of the camera
+    global.board_chair_sprite = instance_create_layer(spawn_x, spawn_y, "Instances", obj_board_chair);
 
-    // Remove the board chair sprite after a few second
-    alarm[1] = room_speed * 3; // Set a timer to remove after 3 seconds
+    // Set flag to false, requiring player input
+    global.board_chair_response_given = false;
+
+    // Request user input asynchronously
+	
+    global.board_chair_input_id = get_string_async("What would you do? Option 1. Give a performance", "");
 }
 

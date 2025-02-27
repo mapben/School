@@ -3,7 +3,7 @@
 
 // Check keys for movement
 
-if(global.choosing == true)
+if(global.choosing == true or global.board_chair_response_given == false)
 {
 	return;
 }
