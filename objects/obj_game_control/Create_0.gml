@@ -192,17 +192,30 @@ function calculate_facility_grade() {
     else global.facility_grade = "F";
 }
 
-function enroll_new_students() {
-    var new_students = 2; // Base enrollment
-    if (global.overall_student_grade == "A") new_students += 5;
-    else if (global.overall_student_grade == "B") new_students += 3;
-    else if (global.overall_student_grade == "C") new_students += 1;
 
-    for (var i = 0; i < new_students; i++) {
+function enroll_new_students() {
+    var avg_student_happiness = 0;
+    
+    if (array_length(global.students) > 0) {
+        for (var i = 0; i < array_length(global.students); i++) {
+            avg_student_happiness += global.students[i].happiness;
+        }
+        avg_student_happiness /= array_length(global.students);
+    }
+
+    var new_students = 1; // Base enrollment
+
+    if (avg_student_happiness >= 80) new_students += irandom_range(3, 5); // More students enroll when happiness is high
+    else if (avg_student_happiness >= 60) new_students += irandom_range(1, 3);
+    else if (avg_student_happiness < 40) new_students -= irandom_range(1, 2); // Students drop out if morale is low
+
+    for (var i = 0; i < max(0, new_students); i++) {
         add_student();
     }
-    show_message(string(new_students) + " new students have enrolled due to strong academic performance!");
+
+    show_message(string(new_students) + " new students have enrolled due to student happiness level.");
 }
+
 
 
 function improve_happiness() {
@@ -250,7 +263,6 @@ function apply_bad_event_impact() {
 function show_board_chair_event() {
     show_message("THE CHAIR OF THE SCHOOL'S BOARD is visiting the school!");
 
-    / Get camera position
     var cam_x = camera_get_view_x(view_camera[0]);
     var cam_y = camera_get_view_y(view_camera[0]);
     var cam_width = camera_get_view_width(view_camera[0]);
@@ -261,7 +273,7 @@ function show_board_chair_event() {
     var spawn_y = cam_y + (cam_height / 2);
 
     // Create the board chair sprite in the center of the camera
-    global.board_chair_sprite = instance_create_layer(spawn_x, spawn_y, "Instances", obj_board_chair);
+    global.board_chair_sprite = instance_create_layer(spawn_x, spawn_y, "Instances", obj_chair);
 
     // Set flag to false, requiring player input
     global.board_chair_response_given = false;
