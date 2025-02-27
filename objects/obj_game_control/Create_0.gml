@@ -223,3 +223,28 @@ global.tasks = [
 ];
 
 global.task_notifications = []; // Stores active task updates
+
+function show_board_chair_event() {
+    show_message("The Chair of the Board, Madam Six, is visiting the school!");
+
+    // Create the board chair sprite in the middle of the screen
+    var board_sprite = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_madam_six);
+
+    var valid_response = false;
+    
+    while (!valid_response) {
+        var response = get_string("Madam Six, wants to inspect the school. What do you do?\n\nOption 1: 'Give a Tour'", "");
+
+        if (string_lower(response) == "1" or string_lower(response) == "Give a tour" or string_lower(response) == "give a tour") {
+            valid_response = true;
+            show_message("You confidently give a grand tour. The Chair is impressed and donates $2000!");
+            global.school_budget += 2000;
+        } else {
+            show_message("The Chair of the Board frowns. That's not a valid action. Try again!");
+        }
+    }
+
+    // Remove the board chair sprite after a few seconds
+    alarm[1] = room_speed * 3; // Set a timer to remove after 3 seconds
+}
+
