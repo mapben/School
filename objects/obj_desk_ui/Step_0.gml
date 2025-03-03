@@ -8,14 +8,14 @@ var panel_y = 30;
 // Detect Student List Button Click
 if (mouse_check_button_pressed(mb_left) &&
     mx > 215 && mx < 280 &&
-    my > 350 && my < 380) {
+    my > 380 && my < 410) {
     global.show_students = !global.show_students; // Toggle visibility
 }
 
 // Detect Faculty List Button Click
 if (mouse_check_button_pressed(mb_left) &&
     mx > 210 && mx < 270 &&
-    my > 385 && my < 415) {
+    my > 415 && my < 445) {
     global.show_faculty = !global.show_faculty; // Toggle visibility
 }
 

@@ -78,11 +78,11 @@ if (global.school_budget < 0) {
     game_end(); // Ends the game
 }
 
-if (irandom(100) < 20) { 
+if (irandom(100) < 5) { 
     show_board_chair_event();
 }
 
-if (irandom(100) < 15) { // 15% chance per week
+if (irandom(100) < 5) {
     var expense_amount = irandom_range(500, 3000);
     global.school_budget -= expense_amount;
     show_message("Something broke! The school had to pay $" + string(expense_amount) + " for emergency repairs!");
@@ -155,3 +155,11 @@ function calculate_weekly_expenses() {
 calculate_weekly_income();
 calculate_weekly_expenses();
 update_faculty_retention();
+
+
+// Update UI immediately after calculations
+if(room == rm_desk) 
+{
+	instance_destroy(obj_desk_ui);
+	instance_create_layer(0, 0, "Instances", obj_desk_ui);
+}

@@ -8,7 +8,7 @@ response = string_lower(string_trim(response));
 // Keep asking until the player provides the correct response
 if (response == "give a performance" or response == "1") {
     show_message("You led all students and faculties to give a grand performance. The Chair is impressed and donates $50000! Everyone is less happy and grades drop");
-    global.awaiting_response = false;
+    global.board_chair_response_given = true;
 	global.school_budget += 50000;
 	apply_bad_event_impact();
 	    

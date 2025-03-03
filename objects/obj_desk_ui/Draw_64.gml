@@ -12,14 +12,15 @@ draw_text(panel_x - 20, panel_y + 120, "Weekly Income: $" + string(global.weekly
 draw_text(panel_x - 20, panel_y + 150, "Weekly Expenses: $" + string(global.weekly_expense));
 draw_text(panel_x - 20, panel_y + 180, "Tuition per Student: $" + string(global.student_tuition));
 draw_text(panel_x - 20, panel_y + 210, "Faculty Salaries: $" + string(global.faculty_salaries));
+draw_text(panel_x - 20, panel_y + 240, "Maintenance Costs: $" + string(array_length(global.facilities) * 1200));
 
 
 // Student Drop-Down Toggle
 draw_set_color(c_white);
-draw_text(panel_x - 20, panel_y + 250, "Students [expand]");
+draw_text(panel_x - 20, panel_y + 280, "Students [expand]");
 
 // Faculty Drop-Down Toggle
-draw_text(panel_x - 20, panel_y + 280, "Faculty [expand]");
+draw_text(panel_x - 20, panel_y + 310, "Faculty [expand]");
 
 
 // If students list is expanded, show all students
