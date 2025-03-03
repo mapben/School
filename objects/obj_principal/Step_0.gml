@@ -47,11 +47,6 @@ if (vx == 0 && vy == 0) {
 
 // If moving
 if (vx != 0 || vy != 0) {
-	if(place_meeting(x + vx, y + vy, obj_par_environment)) {
-		vx = 0;
-		vy = 0;
-		instance_create_layer(x, y, "Instances", obj_facility_menu);
-	}
 	if(place_meeting(x + vx, y + vy, obj_empty_land)) {
 		global.build_x = instance_place(x + vx, y + vy, obj_empty_land).x;
 		global.build_y = instance_place(x + vx, y + vy, obj_empty_land).y;
