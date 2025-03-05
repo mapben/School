@@ -4,15 +4,17 @@
 // Advance the week
 global.current_week += 1;
 
-// Exams take place every 5 weeks
 if (global.current_week mod 5 == 0) {
     for (var i = 0; i < array_length(global.students); i++) {
-        var happiness_factor = (global.students[i].happiness - 50) / 10;
-        var grade_change = irandom_range(-5, 10) + round(happiness_factor);
+        var happiness_factor = (global.students[i].happiness - 50) / 5; // More severe penalty
+        
+        // Reduce grades significantly for unhappy students
+        var grade_change = irandom_range(-10, 10) + round(happiness_factor * 2);
         global.students[i].grade += grade_change;
         global.students[i].grade = clamp(global.students[i].grade, 0, 100);
     }
-    show_message("Exams were held this week! Student grades have been updated.");
+
+    show_message("Exams were held! Student grades have been updated.");
     calculate_overall_student_grade();
 }
 
@@ -89,31 +91,42 @@ if (irandom(100) < 5) {
 }
 
 
-function update_faculty_retention() {
+function apply_faculty_impact() {
     var avg_faculty_happiness = 0;
-    
+
     if (array_length(global.faculty) > 0) {
-        for (var i = 0; i < array_length(global.faculty); i++) {
-            avg_faculty_happiness += global.faculty[i].happiness;
+        for (var j = 0; j < array_length(global.faculty); j++) {
+            avg_faculty_happiness += global.faculty[j].happiness;
         }
         avg_faculty_happiness /= array_length(global.faculty);
     }
 
-    // If faculty happiness is low, some may quit
-    if (avg_faculty_happiness < 40 && array_length(global.faculty) > 0) {
-        var faculty_leaving = irandom_range(1, 2);
-        for (var i = 0; i < faculty_leaving; i++) {
-            remove_faculty(global.faculty[0].id);
+    // Severe impact on students if faculty morale is low
+    if (avg_faculty_happiness < 40) {
+        for (var i = 0; i < array_length(global.students); i++) {
+            global.students[i].grade -= irandom_range(5, 15); // Harsh grade penalty
+            global.students[i].grade = clamp(global.students[i].grade, 0, 100);
         }
-        show_message("Some faculty members have resigned due to low morale!");
+        show_message("Faculty morale is low! Students are performing worse due to poor teaching conditions.");
     }
 
-    // If happiness is high, faculty stays, and new members join
-    if (avg_faculty_happiness > 80) {
-        add_faculty();
-        show_message("A new faculty member has joined due to positive work conditions!");
+    // Reduced tuition income if faculty morale is low
+    if (avg_faculty_happiness < 50) {
+        global.weekly_income *= 0.85; // 15% income reduction due to lower teaching quality
+        show_message("Faculty dissatisfaction has lowered tuition income.");
+    }
+
+    // Faculty quitting at extreme unhappiness
+    if (avg_faculty_happiness < 25 && array_length(global.faculty) > 0) {
+        var faculty_leaving = irandom_range(1, 2);
+        for (var k = 0; k < faculty_leaving; k++) {
+            remove_faculty(global.faculty[0].id);
+        }
+        show_message("Some faculty members have quit due to extreme dissatisfaction!");
     }
 }
+
+
 
 function calculate_weekly_income() {
     var avg_student_happiness = 0;
@@ -154,7 +167,7 @@ function calculate_weekly_expenses() {
 
 calculate_weekly_income();
 calculate_weekly_expenses();
-update_faculty_retention();
+apply_faculty_impact()
 
 
 // Update UI immediately after calculations
