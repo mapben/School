@@ -56,10 +56,6 @@ for (var j = 0; j < array_length(global.faculty); j++) {
 }
 
 
-// Calculate Weekly Income & Expenses
-global.weekly_income = array_length(global.students) * global.student_tuition;
-global.weekly_expense = global.faculty_salaries + (array_length(global.facilities) * 500); // More facilities = more costs
-
 global.school_budget += global.weekly_income - global.weekly_expense; // Update budget
 
 // Show financial summary
@@ -91,84 +87,10 @@ if (irandom(100) < 5) {
 }
 
 
-function apply_faculty_impact() {
-    var avg_faculty_happiness = 0;
-
-    if (array_length(global.faculty) > 0) {
-        for (var j = 0; j < array_length(global.faculty); j++) {
-            avg_faculty_happiness += global.faculty[j].happiness;
-        }
-        avg_faculty_happiness /= array_length(global.faculty);
-    }
-
-    // Severe impact on students if faculty morale is low
-    if (avg_faculty_happiness < 40) {
-        for (var i = 0; i < array_length(global.students); i++) {
-            global.students[i].grade -= irandom_range(5, 15); // Harsh grade penalty
-            global.students[i].grade = clamp(global.students[i].grade, 0, 100);
-        }
-        show_message("Faculty morale is low! Students are performing worse due to poor teaching conditions.");
-    }
-
-    // Reduced tuition income if faculty morale is low
-    if (avg_faculty_happiness < 50) {
-        global.weekly_income *= 0.85; // 15% income reduction due to lower teaching quality
-        show_message("Faculty dissatisfaction has lowered tuition income.");
-    }
-
-    // Faculty quitting at extreme unhappiness
-    if (avg_faculty_happiness < 25 && array_length(global.faculty) > 0) {
-        var faculty_leaving = irandom_range(1, 2);
-        for (var k = 0; k < faculty_leaving; k++) {
-            remove_faculty(global.faculty[0].id);
-        }
-        show_message("Some faculty members have quit due to extreme dissatisfaction!");
-    }
-}
-
-
-
-function calculate_weekly_income() {
-    var avg_student_happiness = 0;
-    
-    if (array_length(global.students) > 0) {
-        for (var i = 0; i < array_length(global.students); i++) {
-            avg_student_happiness += global.students[i].happiness;
-        }
-        avg_student_happiness /= array_length(global.students);
-    }
-
-    // Reduce tuition based on happiness more aggressively
-    var tuition_modifier = (avg_student_happiness - 50) / 5; // More severe drop-off if students are unhappy
-    global.student_tuition = max(400, 1000 + (1000 * (tuition_modifier / 100))); // Lower base tuition
-
-    global.weekly_income = array_length(global.students) * global.student_tuition;
-}
-
-
-function calculate_weekly_expenses() {
-    var avg_faculty_happiness = 0;
-    
-    if (array_length(global.faculty) > 0) {
-        for (var i = 0; i < array_length(global.faculty); i++) {
-            avg_faculty_happiness += global.faculty[i].happiness;
-        }
-        avg_faculty_happiness /= array_length(global.faculty);
-    }
-
-    // Increased faculty salary scaling
-    var salary_modifier = (80 - avg_faculty_happiness) / 5; // More severe impact of low happiness
-    global.faculty_salaries = max(4000, 5000 + (5000 * (salary_modifier / 100))); // Base salary increased
-
-    // Increased facility maintenance costs
-    global.weekly_expense = global.faculty_salaries + (array_length(global.facilities) * 1200); // More expensive to maintain
-}
-
-
 calculate_weekly_income();
 calculate_weekly_expenses();
-apply_faculty_impact()
-
+apply_faculty_impact();
+check_student_dropout();
 
 // Update UI immediately after calculations
 if(room == rm_desk) 

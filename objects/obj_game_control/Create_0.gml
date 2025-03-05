@@ -7,9 +7,9 @@ randomise();
 global.current_week = 1; // Tracks the current game week
 global.school_budget = 50000;
 global.weekly_expense = 5000; // Base expense per week
-global.weekly_income = 7000;  // Initial tuition earnings
-global.student_tuition = 1000; // Earnings per student
-global.faculty_salaries = 3000; // Faculty salaries (fixed)
+global.student_tuition = 1000; // Earnings per studentglobal.tuition_per_student = 1000; // Fixed tuition fee per student
+global.faculty_salary = 3000;      // Fixed salary per faculty member
+global.maintenance_per_facility = 1200; // Fixed maintenance fee per facility
 global.special_event = ""; // Stores random events that occur
 global.notification_list = []; // Stores game notifications
 global.facilities = []; // Stores purchased facilities
@@ -283,3 +283,60 @@ function show_board_chair_event() {
     global.board_chair_input_id = get_string_async("What would you do? Option 1. Give a performance", "");
 }
 
+function calculate_weekly_income() {
+    global.weekly_income = array_length(global.students) * global.student_tuition;
+}
+
+
+function calculate_weekly_expenses() {
+    global.weekly_expense = (array_length(global.faculty) * global.faculty_salary) + (array_length(global.facilities) * global.maintenance_per_facility);
+}
+
+function apply_faculty_impact() {
+    var faculty_threshold = 60; // Below this, faculty might quit
+    var quitting_faculty = 0;
+
+    for (var j = array_length(global.faculty) - 1; j >= 0; j--) {
+        var faculty = global.faculty[j];
+        var quit_chance = 0;
+
+        if (faculty.happiness < faculty_threshold) {
+            quit_chance = (faculty_threshold - faculty.happiness) * 2; // Increase probability as happiness drops
+            if (irandom(100) < quit_chance) {
+                array_delete(global.faculty, j, 1);
+                quitting_faculty += 1;
+            }
+        }
+    }
+
+    if (quitting_faculty > 0) {
+        show_message(string(quitting_faculty) + " faculty members quit due to low happiness!");
+        calculate_weekly_expenses(); // Update budget
+    }
+}
+
+
+function check_student_dropout() {
+    var dropout_threshold = 60; // Students below this happiness level might drop out
+    var unhappy_students = 0;
+
+    for (var i = array_length(global.students) - 1; i >= 0; i--) {
+        var student = global.students[i];
+
+        if (student.happiness < dropout_threshold) {
+            var dropout_chance = (dropout_threshold - student.happiness) * 2; // Increases as happiness gets lower
+            if (irandom(100) < dropout_chance) { // Probability check
+                array_delete(global.students, i, 1);
+                unhappy_students += 1;
+            }
+        }
+    }
+
+    if (unhappy_students > 0) {
+        show_message(string(unhappy_students) + " students dropped out due to low happiness!");
+        calculate_weekly_income(); // Update revenue
+    }
+}
+
+calculate_weekly_income();
+calculate_weekly_expenses();

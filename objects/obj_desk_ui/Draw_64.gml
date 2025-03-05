@@ -1,46 +1,49 @@
-var panel_x = 150;
-var panel_y = 100;
+var panel_x = 120;
+var panel_y = 120;
 var panel_width = 400;
-var panel_height = 300;
+var panel_height = 250 + (array_length(global.students) + array_length(global.faculty)) * 20; // Dynamic height
 
-// School Information
+// Display key stats
 draw_set_color(c_white);
-draw_text(panel_x - 20, panel_y + 30, "Overall Student Grade: " + global.overall_student_grade);
-draw_text(panel_x - 20, panel_y + 60, "School Facility Grade: " + global.facility_grade);
-draw_text(panel_x - 20, panel_y + 90, "School Budget: $" + string(global.school_budget));
-draw_text(panel_x - 20, panel_y + 120, "Weekly Income: $" + string(global.weekly_income));
-draw_text(panel_x - 20, panel_y + 150, "Weekly Expenses: $" + string(global.weekly_expense));
-draw_text(panel_x - 20, panel_y + 180, "Tuition per Student: $" + string(global.student_tuition));
-draw_text(panel_x - 20, panel_y + 210, "Faculty Salaries: $" + string(global.faculty_salaries));
-draw_text(panel_x - 20, panel_y + 240, "Maintenance Costs: $" + string(array_length(global.facilities) * 1200));
+draw_text(panel_x + 10, panel_y + 10, "Week: " + string(global.current_week));
+draw_text(panel_x + 10, panel_y + 30, "Overall Student Grade: " + global.overall_student_grade);
+draw_text(panel_x + 10, panel_y + 50, "Facility Grade: " + global.facility_grade);
+draw_text(panel_x + 10, panel_y + 70, "Budget: $" + string(global.school_budget));
+draw_text(panel_x + 10, panel_y + 90, "Weekly Income: $" + string(global.weekly_income));
+draw_text(panel_x + 10, panel_y + 110, "Weekly Expenses: $" + string(global.weekly_expense));
 
+draw_text(panel_x + 10, panel_y + 140, "Dropout & Resignation Risks:");
 
-// Student Drop-Down Toggle
-draw_set_color(c_white);
-draw_text(panel_x - 20, panel_y + 280, "Students [expand]");
+// Display each student’s dropout probability
+var y_offset = panel_y + 160;
+var dropout_threshold = 60;
+for (var i = 0; i < array_length(global.students); i++) {
+    var student = global.students[i];
+    var dropout_chance = 0;
 
-// Faculty Drop-Down Toggle
-draw_text(panel_x - 20, panel_y + 310, "Faculty [expand]");
-
-
-// If students list is expanded, show all students
-var y_offset = 250;
-if (global.show_students) {
-    for (var i = 0; i < array_length(global.students); i++) {
-        y_offset += 20;
-        draw_text(panel_x + 250, y_offset, global.students[i].name + " - Grade: " + string(global.students[i].grade) + 
-                  " - Happiness: " + string(global.students[i].happiness) + "%");
+    if (student.happiness < dropout_threshold) {
+        dropout_chance = (dropout_threshold - student.happiness) * 2;
     }
+
+    var dropout_text = student.name + " - Happiness: " + string(student.happiness) + "% - Dropout Chance: " + string(dropout_chance) + "%";
+    draw_text(panel_x + 10, y_offset, dropout_text);
+    y_offset += 20;
 }
 
-// If faculty list is expanded, show all faculty members
-if (global.show_faculty) {
-    y_offset += 30; // Add spacing
-    for (var j = 0; j < array_length(global.faculty); j++) {
-        y_offset += 20;
-        draw_text(panel_x + 250, y_offset, global.faculty[j].name + " - Happiness: " + string(global.faculty[j].happiness) + "%");
+// Display each faculty’s resignation probability
+for (var j = 0; j < array_length(global.faculty); j++) {
+    var faculty = global.faculty[j];
+    var quit_chance = 0;
+
+    if (faculty.happiness < dropout_threshold) {
+        quit_chance = (dropout_threshold - faculty.happiness) * 2;
     }
+
+    var faculty_text = faculty.name + " - Happiness: " + string(faculty.happiness) + "% - Quit Chance: " + string(quit_chance) + "%";
+    draw_text(panel_x + 10, y_offset, faculty_text);
+    y_offset += 20;
 }
+
 
 // Draw the "Return to Campus" button
 var btn_x = 150;
