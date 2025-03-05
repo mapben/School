@@ -84,6 +84,7 @@
     {"id":{"name":"spr_backgroundTile","path":"sprites/spr_backgroundTile/spr_backgroundTile.yy",},},
     {"id":{"name":"spr_chair","path":"sprites/spr_chair/spr_chair.yy",},},
     {"id":{"name":"spr_cityTile","path":"sprites/spr_cityTile/spr_cityTile.yy",},},
+    {"id":{"name":"spr_controls","path":"sprites/spr_controls/spr_controls.yy",},},
     {"id":{"name":"spr_Current","path":"sprites/spr_Current/spr_Current.yy",},},
     {"id":{"name":"spr_desk_background","path":"sprites/spr_desk_background/spr_desk_background.yy",},},
     {"id":{"name":"spr_dog1","path":"sprites/spr_dog1/spr_dog1.yy",},},
