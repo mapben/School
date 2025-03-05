@@ -81,7 +81,7 @@ function add_student() {
     array_delete(global.available_dog_names, name_index, 1);
 
     // Assign a random type
-    var dog_type = choose(obj_dog1, obj_dog2, obj_dog4);
+    var dog_type = choose(obj_dog1, obj_dog2, obj_dog3, obj_dog4);
 
     // Create the student
     var student = {
@@ -261,7 +261,7 @@ function apply_bad_event_impact() {
 
 
 function show_board_chair_event() {
-    show_message("THE CHAIR OF THE SCHOOL'S BOARD is visiting the school!");
+    show_message("The CHAIR of the School'S Board is visiting the school!");
 
     var cam_x = camera_get_view_x(view_camera[0]);
     var cam_y = camera_get_view_y(view_camera[0]);
