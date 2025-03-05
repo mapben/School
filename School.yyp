@@ -73,7 +73,7 @@
     {"id":{"name":"obj_swimming_pool","path":"objects/obj_swimming_pool/obj_swimming_pool.yy",},},
     {"id":{"name":"obj_task_display","path":"objects/obj_task_display/obj_task_display.yy",},},
     {"id":{"name":"obj_welcome_control","path":"objects/obj_welcome_control/obj_welcome_control.yy",},},
-    {"id":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
+    {"id":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"id":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"id":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
     {"id":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
@@ -82,6 +82,8 @@
     {"id":{"name":"sound_dog_3","path":"sounds/sound_dog_3/sound_dog_3.yy",},},
     {"id":{"name":"sound_dog_4","path":"sounds/sound_dog_4/sound_dog_4.yy",},},
     {"id":{"name":"spr_backgroundTile","path":"sprites/spr_backgroundTile/spr_backgroundTile.yy",},},
+    {"id":{"name":"spr_chair_down","path":"sprites/spr_chair_down/spr_chair_down.yy",},},
+    {"id":{"name":"spr_chair_right","path":"sprites/spr_chair_right/spr_chair_right.yy",},},
     {"id":{"name":"spr_chair","path":"sprites/spr_chair/spr_chair.yy",},},
     {"id":{"name":"spr_cityTile","path":"sprites/spr_cityTile/spr_cityTile.yy",},},
     {"id":{"name":"spr_controls","path":"sprites/spr_controls/spr_controls.yy",},},
@@ -117,9 +119,9 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
-    {"roomId":{"name":"rm_campus","path":"rooms/rm_campus/rm_campus.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"roomId":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
+    {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
