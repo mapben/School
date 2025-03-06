@@ -25,3 +25,12 @@ if (mouse_check_button_pressed(mb_left)) {
     }
 
 }
+
+if (keyboard_check_pressed(ord("Y"))) {
+    with (obj_game_control) event_user(0); // Calls the week advancement function
+    instance_destroy(); // Closes the popup
+}
+
+if (keyboard_check_pressed(ord("N"))) {
+    instance_destroy(); // Closes the popup without advancing
+}

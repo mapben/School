@@ -213,7 +213,7 @@ function enroll_new_students() {
         add_student();
     }
 
-    show_message(string(new_students) + " new students have enrolled due to student happiness level.");
+    display_message(string(new_students) + " new students have enrolled due to student happiness level.");
 }
 
 
@@ -261,7 +261,7 @@ function apply_bad_event_impact() {
 
 
 function show_board_chair_event() {
-    show_message("The CHAIR of the School'S Board is visiting the school!");
+    display_message("The CHAIR of the School'S Board is visiting the school!");
 
     var cam_x = camera_get_view_x(view_camera[0]);
     var cam_y = camera_get_view_y(view_camera[0]);
@@ -310,7 +310,7 @@ function apply_faculty_impact() {
     }
 
     if (quitting_faculty > 0) {
-        show_message(string(quitting_faculty) + " faculty members quit due to low happiness!");
+        display_message(string(quitting_faculty) + " faculty members quit due to low happiness!");
         calculate_weekly_expenses(); // Update budget
     }
 }
@@ -333,10 +333,15 @@ function check_student_dropout() {
     }
 
     if (unhappy_students > 0) {
-        show_message(string(unhappy_students) + " students dropped out due to low happiness!");
+        display_message(string(unhappy_students) + " students dropped out due to low happiness!");
         calculate_weekly_income(); // Update revenue
     }
 }
 
 calculate_weekly_income();
 calculate_weekly_expenses();
+
+function display_message(text) {
+    var popup = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_message_popup);
+    popup.message_text = text;
+}

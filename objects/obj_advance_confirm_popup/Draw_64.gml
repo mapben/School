@@ -11,5 +11,5 @@ draw_rectangle(popup_x, popup_y, popup_x + 250, popup_y + 100, false);
 // Draw the text
 draw_set_color(c_black);
 draw_text(popup_x + 20, popup_y + 20, "Advance to next week?");
-draw_text(popup_x + 50, popup_y + 70, "[YES]");
-draw_text(popup_x + 130, popup_y + 70, "[NO]");
+draw_text(popup_x + 50, popup_y + 70, "[Y] Yes");
+draw_text(popup_x + 130, popup_y + 70, "[N] No");

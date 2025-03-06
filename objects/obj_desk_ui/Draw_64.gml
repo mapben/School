@@ -6,16 +6,16 @@ var panel_height = 250 + (array_length(global.students) + array_length(global.fa
 // Display key stats
 draw_set_color(c_white);
 draw_text(panel_x + 10, panel_y + 10, "Week: " + string(global.current_week));
-draw_text(panel_x + 10, panel_y + 30, "Overall Student Grade: " + global.overall_student_grade);
-draw_text(panel_x + 10, panel_y + 50, "Facility Grade: " + global.facility_grade);
-draw_text(panel_x + 10, panel_y + 70, "Budget: $" + string(global.school_budget));
-draw_text(panel_x + 10, panel_y + 90, "Weekly Income: $" + string(global.weekly_income));
-draw_text(panel_x + 10, panel_y + 110, "Weekly Expenses: $" + string(global.weekly_expense));
+draw_text(panel_x + 10, panel_y + 40, "Overall Student Grade: " + global.overall_student_grade);
+draw_text(panel_x + 10, panel_y + 70, "Facility Grade: " + global.facility_grade);
+draw_text(panel_x + 10, panel_y + 100, "Budget: $" + string(global.school_budget));
+draw_text(panel_x + 10, panel_y + 130, "Weekly Income: $" + string(global.weekly_income));
+draw_text(panel_x + 10, panel_y + 160, "Weekly Expenses: $" + string(global.weekly_expense));
 
-draw_text(panel_x + 10, panel_y + 140, "Dropout & Resignation Risks:");
+draw_text(panel_x + 10, panel_y + 200, "Student and faculty status:");
 
 // Display each student’s dropout probability
-var y_offset = panel_y + 160;
+var y_offset = panel_y + 220;
 var dropout_threshold = 60;
 for (var i = 0; i < array_length(global.students); i++) {
     var student = global.students[i];
@@ -25,7 +25,7 @@ for (var i = 0; i < array_length(global.students); i++) {
         dropout_chance = (dropout_threshold - student.happiness) * 2;
     }
 
-    var dropout_text = student.name + " - Happiness: " + string(student.happiness) + "% - Dropout Chance: " + string(dropout_chance) + "%";
+    var dropout_text = student.name + " - Happiness: " + string(student.happiness) + "% - Grade: " + string(student.grade) + "% - Dropout Chance: " + string(dropout_chance) + "%";
     draw_text(panel_x + 10, y_offset, dropout_text);
     y_offset += 20;
 }

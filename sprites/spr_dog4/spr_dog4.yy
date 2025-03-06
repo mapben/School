@@ -26,7 +26,7 @@
   ],
   "name":"spr_dog4",
   "nineSlice":null,
-  "origin":9,
+  "origin":7,
   "parent":{
     "name":"dogs",
     "path":"folders/Sprites/characters/dogs.yy",
@@ -88,7 +88,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":96,
-    "yorigin":64,
+    "yorigin":192,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
