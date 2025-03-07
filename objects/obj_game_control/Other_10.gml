@@ -84,7 +84,7 @@ if (irandom(100) < 5) {
 if (irandom(100) < 5) {
     var expense_amount = irandom_range(500, 3000);
     global.school_budget -= expense_amount;
-	display_message("Something broke! The school had to pay $" + string(expense_amount) + " for emergency repairs!");
+	display_message("A student broke something! The school had to pay $" + string(expense_amount) + " for repairs!");
 }
 
 
