@@ -17,6 +17,7 @@ global.overall_student_grade = "F"; // Default grade
 global.facility_grade = "F"; // Default grade
 
 global.board_chair_response_given = true;
+global.interaction_cooldown = 0; // Starts at 0, allowing interactions immediately
 
 
 global.dog_spawn_area = {
@@ -275,11 +276,8 @@ function show_board_chair_event() {
     // Create the board chair sprite in the center of the camera
     global.board_chair_sprite = instance_create_layer(spawn_x, spawn_y, "Instances", obj_chair);
 
-    // Set flag to false, requiring player input
-    global.board_chair_response_given = false;
+    global.occupied = true;
 
-    // Request user input asynchronously
-	
     global.board_chair_input_id = get_string_async("What would you do? Option 1. Give a performance", "");
 }
 
@@ -344,4 +342,22 @@ calculate_weekly_expenses();
 function display_message(text) {
     var popup = instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_message_popup);
     popup.message_text = text;
+}
+
+function apply_dog_interaction(dog, choice) {
+    switch (choice) {
+        case 0: // Pet
+            dog.happiness += 5;
+            show_message("The dog wags its tail happily! (+5 Happiness)");
+            break;
+		case 1:
+			dog.happiness -= 5;
+			show_message("The dog weeps! (-5 Happiness)");
+			break;
+    }
+
+    dog.happiness = clamp(dog.happiness, 0, 100);
+    dog.grade = clamp(dog.grade, 0, 100);
+	
+	global.interaction_cooldown = room_speed * 2; // 2 seconds cooldown
 }

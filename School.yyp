@@ -54,6 +54,7 @@
     {"id":{"name":"obj_chair","path":"objects/obj_chair/obj_chair.yy",},},
     {"id":{"name":"obj_desk_ui","path":"objects/obj_desk_ui/obj_desk_ui.yy",},},
     {"id":{"name":"obj_dialogue_box","path":"objects/obj_dialogue_box/obj_dialogue_box.yy",},},
+    {"id":{"name":"obj_dog_interaction","path":"objects/obj_dog_interaction/obj_dog_interaction.yy",},},
     {"id":{"name":"obj_dog1","path":"objects/obj_dog1/obj_dog1.yy",},},
     {"id":{"name":"obj_dog2","path":"objects/obj_dog2/obj_dog2.yy",},},
     {"id":{"name":"obj_dog3","path":"objects/obj_dog3/obj_dog3.yy",},},

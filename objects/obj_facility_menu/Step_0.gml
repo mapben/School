@@ -14,7 +14,7 @@ if (mouse_check_button_pressed(mb_left)) {
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
         if (my > menu_y + 80 && my < menu_y + 100 && global.school_budget >= 1500 && !array_contains(global.facilities, "piano")) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_piano);
@@ -23,7 +23,7 @@ if (mouse_check_button_pressed(mb_left)) {
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
 		if (my > menu_y + 110 && my < menu_y + 130 && global.school_budget >= 10000 && !array_contains(global.facilities, "soccer field")) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_soccer_field);
@@ -32,7 +32,7 @@ if (mouse_check_button_pressed(mb_left)) {
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
 		if (my > menu_y + 140 && my < menu_y + 160 && global.school_budget >= 30000 && !array_contains(global.facilities, "swimming pool")) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_swimming_pool);
@@ -41,7 +41,7 @@ if (mouse_check_button_pressed(mb_left)) {
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
 		if (my > menu_y + 170 && my < menu_y + 190 && global.school_budget >= 50000 && !array_contains(global.facilities, "gym")) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
@@ -50,13 +50,13 @@ if (mouse_check_button_pressed(mb_left)) {
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
 		
         if (my > menu_y + 200 && my < menu_y + 230) {
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_empty_land);
             instance_destroy();
-			global.choosing = false;
+			global.occupied = false;
         }
     }
 }

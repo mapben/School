@@ -12,3 +12,7 @@ for (var i = 0; i < array_length(global.tasks); i++) {
 if (array_length(global.task_notifications) > 3) {
     array_delete(global.task_notifications, 0, array_length(global.task_notifications) - 3);
 }
+
+if (global.interaction_cooldown > 0) {
+    global.interaction_cooldown -= 1;
+}

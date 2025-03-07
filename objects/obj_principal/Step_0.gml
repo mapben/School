@@ -3,7 +3,7 @@
 
 // Check keys for movement
 
-if(global.choosing == true or global.board_chair_response_given == false)
+if(global.occupied)
 {
 	return;
 }
@@ -51,7 +51,7 @@ if (vx != 0 || vy != 0) {
 		global.build_x = instance_place(x + vx, y + vy, obj_empty_land).x;
 		global.build_y = instance_place(x + vx, y + vy, obj_empty_land).y;
 		instance_destroy(instance_place(x + vx, y + vy, obj_empty_land));
-		global.choosing = true;
+		global.occupied = true;
 		vx = 0;
 		vy = 0;
 		instance_create_layer(x, y, "Instances", obj_facility_menu);
