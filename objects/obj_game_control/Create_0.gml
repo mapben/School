@@ -360,5 +360,4 @@ function apply_dog_interaction(dog, choice) {
     global.students[dog.dog_id].happiness = clamp(global.students[dog.dog_id].happiness, 0, 100);
     global.students[dog.dog_id].grade = clamp(global.students[dog.dog_id].grade, 0, 100);
 	
-	global.interaction_cooldown = 120;
 }

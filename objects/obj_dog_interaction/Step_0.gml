@@ -14,6 +14,7 @@ if (keyboard_check_pressed(vk_enter)) {
 	show_debug_message(global.current_dog);
     obj_game_control.apply_dog_interaction(global.current_dog, global.selected_option);
 	global.occupied = false;
+	global.interaction_cooldown = 120;
 	instance_destroy(obj_dialogue_box);
     instance_destroy(); // Close menu
 }
@@ -21,6 +22,7 @@ if (keyboard_check_pressed(vk_enter)) {
 // Cancel interaction
 if (keyboard_check_pressed(vk_escape)) {
 	global.occupied = false;
+	global.interaction_cooldown = 120;
 	instance_destroy(obj_dialogue_box);
     instance_destroy(); // Close menu without doing anything
 }
