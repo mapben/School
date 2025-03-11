@@ -1,10 +1,10 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_soccer_field",
+  "%Name":"spr_swimming_pool_gray",
   "bboxMode":0,
   "bbox_bottom":255,
   "bbox_left":0,
-  "bbox_right":171,
+  "bbox_right":243,
   "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
@@ -12,16 +12,16 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"6217d160-72d1-4c69-ad08-e34aa334a4b2","name":"6217d160-72d1-4c69-ad08-e34aa334a4b2","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"872a85fe-7cb7-401a-ac41-83aa1f94e4b3","name":"872a85fe-7cb7-401a-ac41-83aa1f94e4b3","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
   "height":256,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"361de803-b41c-4a25-8eaa-19b68165ce9f","blendMode":0,"displayName":"default","isLocked":false,"name":"361de803-b41c-4a25-8eaa-19b68165ce9f","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"5152d5fb-e0e4-47c8-826d-34829fc76b44","blendMode":0,"displayName":"default","isLocked":false,"name":"5152d5fb-e0e4-47c8-826d-34829fc76b44","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_soccer_field",
+  "name":"spr_swimming_pool_gray",
   "nineSlice":null,
   "origin":9,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_soccer_field",
+    "%Name":"spr_swimming_pool_gray",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_soccer_field",
+    "name":"spr_swimming_pool_gray",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,14 +69,14 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6217d160-72d1-4c69-ad08-e34aa334a4b2","path":"sprites/spr_soccer_field/spr_soccer_field.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"6b5f6bd3-b458-4486-85b1-c25440019a53","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"872a85fe-7cb7-401a-ac41-83aa1f94e4b3","path":"sprites/spr_swimming_pool_gray/spr_swimming_pool_gray.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"3424fe88-3809-40a8-beb0-9813d0b2a7b6","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":84,
-    "yorigin":254,
+    "xorigin":123,
+    "yorigin":256,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":172,
+  "width":244,
 }
