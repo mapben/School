@@ -15,6 +15,7 @@ if(keyboard_lastkey == 13) {
 		room_goto(rm_school); // Start the game
 	} 
 	else {
+		audio_play_sound(sound_error, 10, false);
 		show_message("Please enter a name!");
 	}
 }

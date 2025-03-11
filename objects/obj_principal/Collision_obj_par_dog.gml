@@ -1,6 +1,8 @@
 /// @description Insert description here
 // You can write your code in this editor
 // Check if a dialogue box already exists
+if(global.interaction_cooldown > 0) exit;
+
 if (!instance_exists(obj_dialogue_box)) {
     var dialogue = [
         "Woof! Principal, can we have more treats?",
@@ -19,6 +21,7 @@ if (!instance_exists(obj_dialogue_box)) {
 	randomSound = irandom(array_length(dogSound)-1);
 	audio_play_sound(dogSound[randomSound], 10, false);
 	
-    instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_dog_interaction);
 	global.current_dog = other; // Store the dog being interacted with
+	show_debug_message(global.current_dog)
+    instance_create_layer(display_get_gui_width() / 2, display_get_gui_height() / 2, "Instances", obj_dog_interaction);
 }

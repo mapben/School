@@ -7,3 +7,5 @@ target_x = x + walk_distance; // Set rightmost walk point
 move_speed = 1.5; // Walking speed
 walking_direction = 1; // 1 = right, -1 = left
 depth = -y;
+name = "";
+dog_id = -1;

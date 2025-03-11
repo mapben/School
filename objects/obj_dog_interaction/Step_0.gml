@@ -1,6 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (global.current_dog == noone) exit; // No interaction if not near a dog
 
 // Navigate options
 if (keyboard_check_pressed(vk_up)) {
@@ -12,7 +11,8 @@ if (keyboard_check_pressed(vk_down)) {
 
 // Confirm selection
 if (keyboard_check_pressed(vk_enter)) {
-    apply_dog_interaction(global.current_dog, global.selected_option);
+	show_debug_message(global.current_dog);
+    obj_game_control.apply_dog_interaction(global.current_dog, global.selected_option);
 	global.occupied = false;
 	instance_destroy(obj_dialogue_box);
     instance_destroy(); // Close menu

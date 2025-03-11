@@ -7,7 +7,11 @@ var menu_y = display_get_gui_height() / 2 - 75;
 
 if (mouse_check_button_pressed(mb_left)) {
     if (mx > menu_x + 40 && mx < menu_x + 160) {
-        if (my > menu_y + 50 && my < menu_y + 70 && global.school_budget >= 500 && !array_contains(global.facilities, "ping pong table")) {
+        if (my > menu_y + 50 && my < menu_y + 70 && !array_contains(global.facilities, "ping pong table")) {
+			if(global.school_budget < 500) {
+				audio_play_sound(sound_error, 10, false);
+				return;
+			}
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_ping_pong_table);
             global.school_budget -= 500;
 			var new_facility = { type: "ping pong table" };
@@ -16,8 +20,12 @@ if (mouse_check_button_pressed(mb_left)) {
 			instance_destroy();
 			global.occupied = false;
         }
-        if (my > menu_y + 80 && my < menu_y + 100 && global.school_budget >= 1500 && !array_contains(global.facilities, "piano")) {
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_piano);
+        if (my > menu_y + 80 && my < menu_y + 100 && !array_contains(global.facilities, "piano")) {
+            if(global.school_budget < 1500) {
+				audio_play_sound(sound_error, 10, false);
+				return;
+			}
+			instance_create_layer(global.build_x, global.build_y, "Instances", obj_piano);
             global.school_budget -= 1500;
 			var new_facility = { type: "piano" };
 			array_push(global.facilities, new_facility);
@@ -25,8 +33,12 @@ if (mouse_check_button_pressed(mb_left)) {
 			instance_destroy();
 			global.occupied = false;
         }
-		if (my > menu_y + 110 && my < menu_y + 130 && global.school_budget >= 10000 && !array_contains(global.facilities, "soccer field")) {
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_soccer_field);
+		if (my > menu_y + 110 && my < menu_y + 130 && !array_contains(global.facilities, "soccer field")) {
+            if(global.school_budget < 10000) {
+				audio_play_sound(sound_error, 10, false);
+				return;
+			}
+			instance_create_layer(global.build_x, global.build_y, "Instances", obj_soccer_field);
             global.school_budget -= 10000;
 			var new_facility = { type: "soccer field" };
 			array_push(global.facilities, new_facility);
@@ -34,8 +46,12 @@ if (mouse_check_button_pressed(mb_left)) {
 			instance_destroy();
 			global.occupied = false;
         }
-		if (my > menu_y + 140 && my < menu_y + 160 && global.school_budget >= 30000 && !array_contains(global.facilities, "swimming pool")) {
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_swimming_pool);
+		if (my > menu_y + 140 && my < menu_y + 160 && !array_contains(global.facilities, "swimming pool")) {
+            if(global.school_budget < 30000) {
+				audio_play_sound(sound_error, 10, false);
+				return;
+			}
+			instance_create_layer(global.build_x, global.build_y, "Instances", obj_swimming_pool);
             global.school_budget -= 30000;
 			var new_facility = { type: "swimming pool" };
 			array_push(global.facilities, new_facility);
@@ -43,8 +59,12 @@ if (mouse_check_button_pressed(mb_left)) {
 			instance_destroy();
 			global.occupied = false;
         }
-		if (my > menu_y + 170 && my < menu_y + 190 && global.school_budget >= 50000 && !array_contains(global.facilities, "gym")) {
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
+		if (my > menu_y + 170 && my < menu_y + 190 && !array_contains(global.facilities, "gym")) {
+            if(global.school_budget < 50000) {
+				audio_play_sound(sound_error, 10, false);
+				return;
+			}
+			instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
             global.school_budget -= 50000;
 			var new_facility = { type: "gym" };
 			array_push(global.facilities, new_facility);

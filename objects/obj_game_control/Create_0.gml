@@ -21,10 +21,10 @@ global.interaction_cooldown = 0; // Starts at 0, allowing interactions immediate
 
 
 global.dog_spawn_area = {
-    x_min: 200,  // Left boundary
-    x_max: 3800,  // Right boundary
-    y_min: 200,  // Top boundary
-    y_max: 3800   // Bottom boundary
+    x_min: 500,  // Left boundary
+    x_max: 3500,  // Right boundary
+    y_min: 500,  // Top boundary
+    y_max: 3500   // Bottom boundary
 };
 global.spawned_dogs = []; // Stores active dog instances
 
@@ -51,7 +51,8 @@ function scr_spawn_dogs() {
         
         var new_dog = instance_create_layer(spawn_x, spawn_y, "Instances", dog_type);
         new_dog.dog_name = global.students[i].name; // Assign name to instance
-        
+        new_dog.dog_id = global.students[i].dog_id;
+		
         array_push(global.spawned_dogs, new_dog);
     }
 }
@@ -69,8 +70,8 @@ function array_average(arr) {
 
 global.students = []; // Stores student objects
 global.faculty = [];  // Stores faculty objects
-global.next_student_id = 1; // Unique ID for new students
-global.next_faculty_id = 1;  // Unique ID for new faculty members
+global.next_student_id = 0; // Unique ID for new students
+global.next_faculty_id = 0;  // Unique ID for new faculty members
 
 global.available_dog_names = ["Buddy", "Max", "Charlie", "Bella", "Luna", "Rocky", "Daisy", "Milo", "Cooper", "Bailey", "Teddy", "Lucy", "Willow", "Bear"];
 
@@ -86,7 +87,7 @@ function add_student() {
 
     // Create the student
     var student = {
-        id: global.next_student_id,
+        dog_id: global.next_student_id,
         name: selected_name,
         grade: irandom_range(50, 100),
         happiness: irandom_range(60, 100),
@@ -347,17 +348,17 @@ function display_message(text) {
 function apply_dog_interaction(dog, choice) {
     switch (choice) {
         case 0: // Pet
-            dog.happiness += 5;
-            show_message("The dog wags its tail happily! (+5 Happiness)");
+            global.students[dog.dog_id].happiness += 5;
+            display_message("The dog wags its tail! (+5 Happiness)");
             break;
 		case 1:
-			dog.happiness -= 5;
-			show_message("The dog weeps! (-5 Happiness)");
+			global.students[dog.dog_id].happiness -= 5;
+			display_message("The dog weeps! (-5 Happiness)");
 			break;
     }
 
-    dog.happiness = clamp(dog.happiness, 0, 100);
-    dog.grade = clamp(dog.grade, 0, 100);
+    global.students[dog.dog_id].happiness = clamp(global.students[dog.dog_id].happiness, 0, 100);
+    global.students[dog.dog_id].grade = clamp(global.students[dog.dog_id].grade, 0, 100);
 	
-	global.interaction_cooldown = room_speed * 2; // 2 seconds cooldown
+	global.interaction_cooldown = 120;
 }
