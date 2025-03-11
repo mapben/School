@@ -14,7 +14,11 @@ if (mouse_check_button_pressed(mb_left)) {
 			}
             instance_create_layer(global.build_x, global.build_y, "Instances", obj_ping_pong_table);
             global.school_budget -= 500;
-			var new_facility = { type: "ping pong table" };
+			var new_facility = {
+			    x: global.build_x,
+			    y: global.build_y,
+			    type: "ping pong table"
+			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
@@ -27,7 +31,11 @@ if (mouse_check_button_pressed(mb_left)) {
 			}
 			instance_create_layer(global.build_x, global.build_y, "Instances", obj_piano);
             global.school_budget -= 1500;
-			var new_facility = { type: "piano" };
+			var new_facility = {
+			    x: global.build_x,
+			    y: global.build_y,
+			    type: "piano"
+			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
@@ -40,7 +48,11 @@ if (mouse_check_button_pressed(mb_left)) {
 			}
 			instance_create_layer(global.build_x, global.build_y, "Instances", obj_soccer_field);
             global.school_budget -= 10000;
-			var new_facility = { type: "soccer field" };
+			var new_facility = {
+			    x: global.build_x,
+			    y: global.build_y,
+			    type: "soccer field"
+			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
@@ -53,7 +65,11 @@ if (mouse_check_button_pressed(mb_left)) {
 			}
 			instance_create_layer(global.build_x, global.build_y, "Instances", obj_swimming_pool);
             global.school_budget -= 30000;
-			var new_facility = { type: "swimming pool" };
+			var new_facility = {
+			    x: global.build_x,
+			    y: global.build_y,
+			    type: "swimming pool"
+			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
@@ -66,7 +82,11 @@ if (mouse_check_button_pressed(mb_left)) {
 			}
 			instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
             global.school_budget -= 50000;
-			var new_facility = { type: "gym" };
+			var new_facility = {
+			    x: global.build_x,
+			    y: global.build_y,
+			    type: "gym"
+			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();

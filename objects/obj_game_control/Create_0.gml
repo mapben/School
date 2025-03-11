@@ -218,8 +218,6 @@ function enroll_new_students() {
     display_message(string(new_students) + " new students have enrolled due to student happiness level.");
 }
 
-
-
 function improve_happiness() {
     for (var i = 0; i < array_length(global.students); i++) {
         global.students[i].happiness += irandom_range(5, 15); // Happiness boost
