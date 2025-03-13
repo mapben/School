@@ -262,7 +262,6 @@ function apply_bad_event_impact() {
 
 function show_board_chair_event() {
     show_message("The CHAIR of the School's Board is visiting the school!");
-
 	room_goto(rm_chair_animation);
 }
 

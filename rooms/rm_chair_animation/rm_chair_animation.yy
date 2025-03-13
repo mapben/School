@@ -1,7 +1,7 @@
 {
   "$GMRoom":"v1",
   "%Name":"rm_chair_animation",
-  "creationCodeFile":"",
+  "creationCodeFile":"rooms/rm_chair_animation/RoomCreationCode.gml",
   "inheritCode":false,
   "inheritCreationOrder":false,
   "inheritLayers":false,
