@@ -100,3 +100,10 @@ if (mouse_check_button_pressed(mb_left)) {
         }
     }
 }
+
+if keyboard_check(vk_escape)
+{
+    instance_create_layer(global.build_x, global.build_y, "Instances", obj_empty_land);
+    instance_destroy();
+	global.occupied = false;
+}

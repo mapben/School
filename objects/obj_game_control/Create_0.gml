@@ -215,7 +215,7 @@ function enroll_new_students() {
         add_student();
     }
 
-    display_message(string(new_students) + " new students have enrolled due to student happiness level.");
+    show_message(string(new_students) + " new students have enrolled due to student happiness level.");
 }
 
 function improve_happiness() {
@@ -261,23 +261,9 @@ function apply_bad_event_impact() {
 
 
 function show_board_chair_event() {
-    display_message("The CHAIR of the School'S Board is visiting the school!");
+    show_message("The CHAIR of the School's Board is visiting the school!");
 
-    var cam_x = camera_get_view_x(view_camera[0]);
-    var cam_y = camera_get_view_y(view_camera[0]);
-    var cam_width = camera_get_view_width(view_camera[0]);
-    var cam_height = camera_get_view_height(view_camera[0]);
-
-    // Calculate center of camera view
-    var spawn_x = cam_x + (cam_width / 2);
-    var spawn_y = cam_y + (cam_height / 2);
-
-    // Create the board chair sprite in the center of the camera
-    global.board_chair_sprite = instance_create_layer(spawn_x, spawn_y, "Instances", obj_chair);
-
-    global.occupied = true;
-
-    global.board_chair_input_id = get_string_async("What would you do? Option 1. Give a performance", "");
+	room_goto(rm_chair_animation);
 }
 
 function calculate_weekly_income() {
@@ -307,7 +293,7 @@ function apply_faculty_impact() {
     }
 
     if (quitting_faculty > 0) {
-        display_message(string(quitting_faculty) + " faculty members quit due to low happiness!");
+        show_message(string(quitting_faculty) + " faculty members quit due to low happiness!");
         calculate_weekly_expenses(); // Update budget
     }
 }
@@ -330,7 +316,7 @@ function check_student_dropout() {
     }
 
     if (unhappy_students > 0) {
-        display_message(string(unhappy_students) + " students dropped out due to low happiness!");
+        show_message(string(unhappy_students) + " students dropped out due to low happiness!");
         calculate_weekly_income(); // Update revenue
     }
 }

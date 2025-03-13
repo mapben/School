@@ -14,13 +14,13 @@ if (global.current_week mod 5 == 0) {
         global.students[i].grade = clamp(global.students[i].grade, 0, 100);
     }
 
-    display_message("Exams were held! Student grades have been updated.");
+    show_message("Exams were held! Student grades have been updated.");
     calculate_overall_student_grade();
 }
 
 // Break happens after every two exams (every 10 weeks)
 if (global.current_week mod 10 == 0) {
-    display_message("It's break week! Everyone is happier.");
+    show_message("It's break week! Everyone is happier.");
     improve_happiness();
     scr_spawn_dogs(); // Ensure campus is empty during break
 } else {
@@ -29,7 +29,7 @@ if (global.current_week mod 10 == 0) {
 
 // Admissions Week happens every 20 weeks (New students join, but no one graduates)
 if (global.current_week mod 20 == 0) {
-    display_message("Admissions Week! New students are enrolling.");
+    show_message("Admissions Week! New students are enrolling.");
     enroll_new_students();
 }
 
@@ -68,23 +68,23 @@ display_message(finance_summary);
 
 // Trigger a warning if budget is below $2000 but still positive
 if (global.school_budget > 0 && global.school_budget < 2000) {
-    display_message("Warning! The school is running low on funds. Consider improving grades to increase tuition!");
+    show_message("Warning! The school is running low on funds. Consider improving grades to increase tuition!");
 }
 
 // If the budget is negative, trigger game over
 if (global.school_budget < 0) {
-    display_message("The school has gone bankrupt! Game Over.");
+    show_message("The school has gone bankrupt! Game Over.");
     game_end(); // Ends the game
 }
 
-if (irandom(100) < 5) { 
+if (irandom(100) < 100) { 
     show_board_chair_event();
 }
 
 if (irandom(100) < 5) {
     var expense_amount = irandom_range(500, 3000);
     global.school_budget -= expense_amount;
-	display_message("A student broke something! The school had to pay $" + string(expense_amount) + " for repairs!");
+	show_message("A student broke something! The school had to pay $" + string(expense_amount) + " for repairs!");
 }
 
 
