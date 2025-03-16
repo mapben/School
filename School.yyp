@@ -54,6 +54,7 @@
     {"id":{"name":"obj_board_chair_dialog","path":"objects/obj_board_chair_dialog/obj_board_chair_dialog.yy",},},
     {"id":{"name":"obj_campus_stats","path":"objects/obj_campus_stats/obj_campus_stats.yy",},},
     {"id":{"name":"obj_chair_animation","path":"objects/obj_chair_animation/obj_chair_animation.yy",},},
+    {"id":{"name":"obj_chair_interaction","path":"objects/obj_chair_interaction/obj_chair_interaction.yy",},},
     {"id":{"name":"obj_chair","path":"objects/obj_chair/obj_chair.yy",},},
     {"id":{"name":"obj_desk_ui","path":"objects/obj_desk_ui/obj_desk_ui.yy",},},
     {"id":{"name":"obj_dialogue_box","path":"objects/obj_dialogue_box/obj_dialogue_box.yy",},},
@@ -137,8 +138,9 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
+    {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
+    {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"roomId":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
   ],

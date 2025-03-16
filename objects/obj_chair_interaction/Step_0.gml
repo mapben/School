@@ -17,11 +17,3 @@ if (keyboard_check_pressed(vk_enter)) {
 	instance_destroy(obj_dialogue_box);
     instance_destroy(); // Close menu
 }
-
-// Cancel interaction
-if (keyboard_check_pressed(vk_escape)) {
-	global.occupied = false;
-	global.interaction_cooldown = 120;
-	instance_destroy(obj_dialogue_box);
-    instance_destroy(); // Close menu without doing anything
-}
