@@ -1,12 +1,11 @@
 {
   "$GMObject":"",
-  "%Name":"obj_dog1_ani",
+  "%Name":"obj_stage",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_dog1_ani",
+  "name":"obj_stage",
   "overriddenProperties":[],
   "parent":{
     "name":"Chair_animation",
@@ -31,8 +30,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_dog1",
-    "path":"sprites/spr_dog1/spr_dog1.yy",
+    "name":"spr_stage",
+    "path":"sprites/spr_stage/spr_stage.yy",
   },
   "spriteMaskId":null,
   "visible":true,
