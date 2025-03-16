@@ -84,7 +84,6 @@
     {"id":{"name":"obj_swimming_pool","path":"objects/obj_swimming_pool/obj_swimming_pool.yy",},},
     {"id":{"name":"obj_task_display","path":"objects/obj_task_display/obj_task_display.yy",},},
     {"id":{"name":"obj_welcome_control","path":"objects/obj_welcome_control/obj_welcome_control.yy",},},
-    {"id":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"id":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"id":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
     {"id":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
@@ -139,7 +138,6 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
-    {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"roomId":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
