@@ -346,3 +346,9 @@ function apply_dog_interaction(dog, choice) {
 }
 
 global.return_from_chair = false;
+
+global.num_co_principals = 0;
+function assign_co_principal() {
+    show_message("The CHAIR has assigned a new Co-Principal!");
+    global.num_co_principals += 1; // Increase the number of co-principals
+}

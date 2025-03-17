@@ -80,7 +80,7 @@ if (global.school_budget < 0) {
 if (irandom(100) < 5) {
     var expense_amount = irandom_range(500, 3000);
     global.school_budget -= expense_amount;
-	show_message("A student broke something! The school had to pay $" + string(expense_amount) + " for repairs!");
+	show_message("A student broke something! The school has to pay $" + string(expense_amount) + " for repairs!");
 }
 
 calculate_weekly_income();
@@ -88,9 +88,15 @@ calculate_weekly_expenses();
 apply_faculty_impact();
 check_student_dropout();
 
+var chair_happened = false;
 
-if (irandom(100) < 100) { 
+if (irandom(100) < 5) { 
     show_board_chair_event();
+	chair_happened = true;
+}
+
+if (irandom(100) < 100 and chair_happened == false) {
+    assign_co_principal();
 }
 
 // Update UI immediately after calculations
