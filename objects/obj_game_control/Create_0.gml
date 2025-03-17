@@ -8,8 +8,8 @@ global.current_week = 1; // Tracks the current game week
 global.school_budget = 50000;
 global.weekly_expense = 5000; // Base expense per week
 global.student_tuition = 1000; // Earnings per studentglobal.tuition_per_student = 1000; // Fixed tuition fee per student
-global.faculty_salary = 3000;      // Fixed salary per faculty member
-global.maintenance_per_facility = 1200; // Fixed maintenance fee per facility
+global.faculty_salary = 2000;      // Fixed salary per faculty member
+global.maintenance_per_facility = 1000; // Fixed maintenance fee per facility
 global.special_event = ""; // Stores random events that occur
 global.notification_list = []; // Stores game notifications
 global.facilities = []; // Stores purchased facilities
