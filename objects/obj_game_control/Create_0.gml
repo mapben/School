@@ -118,7 +118,7 @@ function remove_student(student_id) {
 function add_faculty() {
     var faculty = {
         id: global.next_faculty_id,
-        name: "Trainer " + string(global.next_faculty_id),
+        name: "Trainer " + string(global.next_faculty_id + 1),
         happiness: irandom_range(60, 100) // Faculty happiness starts between 60-100
     };
     array_push(global.faculty, faculty);
@@ -207,15 +207,14 @@ function enroll_new_students() {
 
     var new_students = 1; // Base enrollment
 
-    if (avg_student_happiness >= 80) new_students += irandom_range(3, 5); // More students enroll when happiness is high
-    else if (avg_student_happiness >= 60) new_students += irandom_range(1, 3);
-    else if (avg_student_happiness < 40) new_students -= irandom_range(1, 2); // Students drop out if morale is low
-
+    if (avg_student_happiness + array_length(global.faculty) * 3 >= 80) new_students += irandom_range(1, 2); // More students enroll when happiness is high
+    else if (avg_student_happiness + array_length(global.faculty) * 3 >= 60) new_students += irandom_range(0, 1);
+	
     for (var i = 0; i < max(0, new_students); i++) {
         add_student();
     }
 
-    show_message(string(new_students) + " new students have enrolled due to student happiness level.");
+    show_message(string(new_students) + " new students have enrolled due to students' happiness level.");
 }
 
 function improve_happiness() {
@@ -271,7 +270,7 @@ function calculate_weekly_income() {
 
 
 function calculate_weekly_expenses() {
-    global.weekly_expense = (array_length(global.faculty) * global.faculty_salary) + (array_length(global.facilities) * global.maintenance_per_facility);
+    global.weekly_expense = 2000 + (array_length(global.faculty) * global.faculty_salary) + (array_length(global.facilities) * global.maintenance_per_facility);
 }
 
 function apply_faculty_impact() {
@@ -349,6 +348,7 @@ global.return_from_chair = false;
 
 global.num_co_principals = 0;
 function assign_co_principal() {
+	audio_play_sound(sound_another_one, 15, false);
     show_message("The CHAIR has assigned a new Co-Principal!");
     global.num_co_principals += 1; // Increase the number of co-principals
 }

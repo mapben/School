@@ -62,8 +62,26 @@ draw_text(-50, -30, "Principal: " + global.player_name);
 draw_set_color(c_white);
 var weeks_until_exam = 5 - (global.current_week mod 5);
 var weeks_until_break = 10 - (global.current_week mod 10);
-var weeks_until_admissions = 20 - (global.current_week mod 20);
 
 draw_text(400, 120, "Next Exam in: " + string(weeks_until_exam) + " weeks");
 draw_text(400, 140, "Next Break in: " + string(weeks_until_break) + " weeks");
-draw_text(400, 160, "Next Admissions Week in: " + string(weeks_until_admissions) + " weeks");
+
+
+var admissions_button_x = display_get_gui_width() - 250;
+var admissions_button_y = display_get_gui_height() - 200;
+var admissions_cost = 7500;
+draw_set_color(make_color_rgb(100, 100, 200));
+draw_rectangle(admissions_button_x, admissions_button_y, admissions_button_x + 225, admissions_button_y + 40, false);
+
+draw_set_color(c_white);
+draw_text(admissions_button_x + 10, admissions_button_y + 10, "Host Admissions ($" + string(admissions_cost) + ")");
+
+
+var hire_faculty_button_x = display_get_gui_width() - 250;
+var hire_faculty_button_y = display_get_gui_height() - 250;
+var hire_faculty_cost = 3000;
+draw_set_color(make_color_rgb(100, 100, 200));
+draw_rectangle(hire_faculty_button_x, hire_faculty_button_y, hire_faculty_button_x + 225, hire_faculty_button_y + 40, false);
+
+draw_set_color(c_white);
+draw_text(hire_faculty_button_x + 10, hire_faculty_button_y + 10, "Hire new faculty ($" + string(hire_faculty_cost) + ")");

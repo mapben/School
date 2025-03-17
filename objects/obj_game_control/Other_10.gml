@@ -6,7 +6,7 @@ global.current_week += 1;
 
 if (global.current_week mod 5 == 0) {
     for (var i = 0; i < array_length(global.students); i++) {
-        var happiness_factor = (global.students[i].happiness - 50) / 5; // More severe penalty
+        var happiness_factor = (global.students[i].happiness + array_length(global.faculty) * 3 - 50) / 5;
         
         // Reduce grades significantly for unhappy students
         var grade_change = irandom_range(-10, 10) + round(happiness_factor * 2);
@@ -27,12 +27,6 @@ if (global.current_week mod 10 == 0) {
     scr_spawn_dogs(); // Re-spawn dogs when break ends
 }
 
-// Admissions Week happens every 20 weeks (New students join, but no one graduates)
-if (global.current_week mod 20 == 0) {
-    show_message("Admissions Week! New students are enrolling.");
-    enroll_new_students();
-}
-
 // Happiness modifiers based on facility grade
 var happiness_boost = 0;
 switch (global.facility_grade) {
@@ -46,13 +40,20 @@ switch (global.facility_grade) {
 // Update student happiness
 for (var i = 0; i < array_length(global.students); i++) {
     global.students[i].happiness += happiness_boost + irandom_range(-5, 5); // Random fluctuation
-    global.students[i].happiness = clamp(global.students[i].happiness, 0, 100);
-}
-
-// Update faculty happiness
-for (var j = 0; j < array_length(global.faculty); j++) {
-    global.faculty[j].happiness += happiness_boost + irandom_range(-5, 5);
-    global.faculty[j].happiness = clamp(global.faculty[j].happiness, 0, 100);
+    var grade_effect = 0;
+    // Apply happiness changes based on grade performance
+    if (global.students[i].grade >= 90) {
+        grade_effect = 5; // High grades = extra happiness boost
+    } else if (global.students[i].grade >= 70) {
+        grade_effect = 3; // Decent grades = slight boost
+    } else if (global.students[i].grade < 60) {
+        grade_effect = -3; // Low grades = loss in happiness
+    } else if (global.students[i].grade < 40) {
+        grade_effect = -5; // Very poor grades = severe happiness drop
+	}
+    // Apply grade-based happiness effect
+    global.students[i].happiness += grade_effect;
+	global.students[i].happiness = clamp(global.students[i].happiness, 0, 100);
 }
 
 

@@ -12,7 +12,7 @@ if (keyboard_lastkey == vk_backspace && string_length(global.player_name) > 0) {
 
 if(keyboard_lastkey == 13) {
 	if (string_length(global.player_name) > 0) {
-		audio_sound_gain(sound_love_8bit, 0.3, 0);
+		audio_sound_gain(sound_love_8bit, 0.1, 0);
 		room_goto(rm_school); // Start the game
 	} 
 	else {
