@@ -3,17 +3,15 @@
 
 // Navigate options
 if (keyboard_check_pressed(vk_up)) {
-    global.selected_option = max(global.selected_option - 1, 0);
+    global.chair_selected = max(global.chair_selected - 1, 0);
 }
 if (keyboard_check_pressed(vk_down)) {
-    global.selected_option = min(global.selected_option + 1, array_length(global.interaction_options) - 1);
+    global.chair_selected = min(global.chair_selected + 1, array_length(global.chair_options) - 1);
 }
 
 // Confirm selection
 if (keyboard_check_pressed(vk_enter)) {
-    obj_game_control.apply_dog_interaction(global.current_dog, global.selected_option);
-	global.occupied = false;
-	global.interaction_cooldown = 120;
+	global.event += 0.5;
 	instance_destroy(obj_dialogue_box);
     instance_destroy(); // Close menu
 }

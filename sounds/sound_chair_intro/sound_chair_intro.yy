@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snd_chair_intro",
+  "%Name":"sound_chair_intro",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":63.920635,
-  "name":"snd_chair_intro",
+  "name":"sound_chair_intro",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"snd_chair_intro.wav",
+  "soundFile":"sound_chair_intro.wav",
   "type":0,
   "volume":1.0,
 }

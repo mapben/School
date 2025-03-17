@@ -344,3 +344,5 @@ function apply_dog_interaction(dog, choice) {
     global.students[dog.dog_id].grade = clamp(global.students[dog.dog_id].grade, 0, 100);
 	
 }
+
+global.return_from_chair = false;

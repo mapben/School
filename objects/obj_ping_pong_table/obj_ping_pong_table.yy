@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_ping_pong_table_gray",
-    "path":"sprites/spr_ping_pong_table_gray/spr_ping_pong_table_gray.yy",
+    "name":"spr_ping_pong_table",
+    "path":"sprites/spr_ping_pong_table/spr_ping_pong_table.yy",
   },
   "spriteMaskId":null,
   "visible":true,

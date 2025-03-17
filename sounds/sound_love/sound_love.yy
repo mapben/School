@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"sound_giving_love",
+  "%Name":"sound_love",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":32.287346,
-  "name":"sound_giving_love",
+  "name":"sound_love",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"sound_giving_love.mp3",
+  "soundFile":"sound_love.mp3",
   "type":0,
   "volume":1.0,
 }

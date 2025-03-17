@@ -1,5 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-global.interaction_options = ["Pet", "Chide"];
-global.selected_option = 0;
+global.chair_options = ["Yes", "YESSSSSS!!!"];
+global.chair_selected = 0;
 global.occupied = true;

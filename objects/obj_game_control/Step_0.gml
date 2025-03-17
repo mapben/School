@@ -16,3 +16,10 @@ if (array_length(global.task_notifications) > 3) {
 if (global.interaction_cooldown > 0) {
     global.interaction_cooldown -= 1;
 }
+
+if (global.return_from_chair == true) {
+	show_message("The board is satisfied and donated $50,000! Meanwhile, everyone is less happy and grades drop!")
+	global.school_budget += 50000;
+	apply_bad_event_impact();
+	global.return_from_chair = false;
+}

@@ -77,21 +77,21 @@ if (global.school_budget < 0) {
     game_end(); // Ends the game
 }
 
-if (irandom(100) < 100) { 
-    show_board_chair_event();
-}
-
 if (irandom(100) < 5) {
     var expense_amount = irandom_range(500, 3000);
     global.school_budget -= expense_amount;
 	show_message("A student broke something! The school had to pay $" + string(expense_amount) + " for repairs!");
 }
 
-
 calculate_weekly_income();
 calculate_weekly_expenses();
 apply_faculty_impact();
 check_student_dropout();
+
+
+if (irandom(100) < 100) { 
+    show_board_chair_event();
+}
 
 // Update UI immediately after calculations
 if(room == rm_desk) 
