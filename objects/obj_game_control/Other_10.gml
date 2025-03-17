@@ -96,7 +96,7 @@ if (irandom(100) < 5) {
 	chair_happened = true;
 }
 
-if (irandom(100) < 100 and chair_happened == false) {
+if (irandom(100) < 5 and chair_happened == false) {
     assign_co_principal();
 }
 
