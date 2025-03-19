@@ -56,6 +56,9 @@ if (vx != 0 || vy != 0) {
 		vy = 0;
 		instance_create_layer(x, y, "Instances", obj_facility_menu);
 	}
+	else if(place_meeting(x + vx, y + vy, obj_school_building)) {
+		var nothing = "nothing";
+	}
 	else if(place_meeting(x + vx, y + vy, obj_par_environment)) {
 		vx = 0;
 		vy = 0;
