@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 if (keyboard_lastkey > 31 && keyboard_lastkey < 127) { // Only allow readable characters
-    if (string_length(global.player_name) < max_length) {
+    if (string_length(string(global.player_name)) < max_length) {
         global.player_name += chr(keyboard_lastkey);
     }
 }
@@ -12,7 +12,7 @@ if (keyboard_lastkey == vk_backspace && string_length(global.player_name) > 0) {
 
 if(keyboard_lastkey == 13) {
 	if (string_length(global.player_name) > 0) {
-		audio_sound_gain(sound_love_8bit, 0.1, 0);
+		audio_sound_gain(sound_love_8bit, 0.2, 0);
 		room_goto(rm_school); // Start the game
 	} 
 	else {

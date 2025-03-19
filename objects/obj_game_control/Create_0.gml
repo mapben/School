@@ -80,7 +80,6 @@ function add_student() {
     // Assign a random name
     var name_index = irandom(array_length(global.available_dog_names) - 1);
     var selected_name = global.available_dog_names[name_index];
-    array_delete(global.available_dog_names, name_index, 1);
 
     // Assign a random type
     var dog_type = choose(obj_dog1, obj_dog2, obj_dog3, obj_dog4);

@@ -2,6 +2,8 @@
 // You can write your code in this editor
 
 
+if(global.school_budget == 41000)
+	show_debug_message("ok");
 
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
@@ -23,7 +25,12 @@ if (mouse_check_button_pressed(mb_left) &&
 
 var admissions_button_x = display_get_gui_width() - 250;
 var admissions_button_y = display_get_gui_height() - 200;
-var admissions_cost = 7500;
+var admissions_cost = 10000;
+
+var hire_faculty_button_x = display_get_gui_width() - 250;
+var hire_faculty_button_y = display_get_gui_height() - 250;
+var hire_faculty_cost = 3000;
+
 
 if (mouse_check_button_pressed(mb_left) &&
 	mx > admissions_button_x && mx < admissions_button_x + 180 &&
@@ -35,17 +42,10 @@ if (mouse_check_button_pressed(mb_left) &&
 		obj_game_control.calculate_weekly_income();
     } else {
 		audio_play_sound(sound_error, 15, false);
-        display_message("Not enough funds to host admissions!");
+        show_message("Not enough funds to host admissions!");
     }
 }
-
-
-
-var hire_faculty_button_x = display_get_gui_width() - 250;
-var hire_faculty_button_y = display_get_gui_height() - 250;
-var hire_faculty_cost = 3000;
-
-if (mouse_check_button_pressed(mb_left) &&
+else if (mouse_check_button_pressed(mb_left) &&
 	mx > hire_faculty_button_x && mx < hire_faculty_button_x + 180 &&
     my > hire_faculty_button_y && my < hire_faculty_button_y + 40) {
     
@@ -55,6 +55,20 @@ if (mouse_check_button_pressed(mb_left) &&
 		obj_game_control.calculate_weekly_expenses();
     } else {
 		audio_play_sound(sound_error, 15, false);
-        display_message("Not enough funds to host admissions!");
+        show_message("Not enough funds to host admissions!");
     }
 }
+
+
+
+if (keyboard_check_pressed(vk_up) || mouse_wheel_up()) {
+    scroll_offset = max(scroll_offset - 1, 0);
+}
+
+if (keyboard_check_pressed(vk_down) || mouse_wheel_down()) {
+    scroll_offset = min(scroll_offset + 1, max(0, array_length(global.students) - max_visible_entries));
+}
+
+if(global.school_budget == 40000)
+	show_debug_message("ok");
+

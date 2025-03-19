@@ -2,6 +2,7 @@
 // You can write your code in this editor
 for (var i = 0; i < array_length(global.tasks); i++) {
     if (!global.tasks[i].completed && global.tasks[i].condition()) {
+		show_message("Congrats! You've finished a task for a reward of $"+ string(global.tasks[i].reward) + "!");
         global.tasks[i].completed = true;
         global.school_budget += global.tasks[i].reward; // Grant reward immediately
         array_push(global.task_notifications, "Task Complete: " + global.tasks[i].name + " (+$" + string(global.tasks[i].reward) + ")");
