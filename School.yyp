@@ -18,8 +18,8 @@
     {"$GMFolder":"","%Name":"Chair_animation","folderPath":"folders/Objects/Chair_animation.yy","name":"Chair_animation","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"characters","folderPath":"folders/Objects/characters.yy","name":"characters","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"environment","folderPath":"folders/Objects/environment.yy","name":"environment","resourceType":"GMFolder","resourceVersion":"2.0",},
-    {"$GMFolder":"","%Name":"Instruction","folderPath":"folders/Objects/Instruction.yy","name":"Instruction","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"GUI Elements","folderPath":"folders/Objects/GUI Elements.yy","name":"GUI Elements","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"Instruction","folderPath":"folders/Objects/Instruction.yy","name":"Instruction","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Particle Systems","folderPath":"folders/Particle Systems.yy","name":"Particle Systems","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Paths","folderPath":"folders/Paths.yy","name":"Paths","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Rooms","folderPath":"folders/Rooms.yy","name":"Rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
@@ -150,10 +150,10 @@
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
+    {"roomId":{"name":"rm_instruction","path":"rooms/rm_instruction/rm_instruction.yy",},},
     {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_desk","path":"rooms/rm_desk/rm_desk.yy",},},
     {"roomId":{"name":"rm_school","path":"rooms/rm_school/rm_school.yy",},},
-    {"roomId":{"name":"rm_instruction","path":"rooms/rm_instruction/rm_instruction.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
