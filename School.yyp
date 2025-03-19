@@ -148,6 +148,10 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+<<<<<<< HEAD
+=======
+    {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
+>>>>>>> 881b66c3a618fac3785b3491c7a4cb9b701b625d
     {"roomId":{"name":"rm_instruction","path":"rooms/rm_instruction/rm_instruction.yy",},},
     {"roomId":{"name":"rm_chair_animation","path":"rooms/rm_chair_animation/rm_chair_animation.yy",},},
     {"roomId":{"name":"rm_welcome","path":"rooms/rm_welcome/rm_welcome.yy",},},
