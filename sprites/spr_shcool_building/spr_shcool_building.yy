@@ -2,7 +2,7 @@
   "$GMSprite":"",
   "%Name":"spr_shcool_building",
   "bboxMode":2,
-  "bbox_bottom":384,
+  "bbox_bottom":360,
   "bbox_left":10,
   "bbox_right":760,
   "bbox_top":250,
