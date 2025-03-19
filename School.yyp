@@ -48,8 +48,6 @@
   },
   "name":"School",
   "resources":[
-    {"id":{"name":"fnt_regular","path":"fonts/fnt_regular/fnt_regular.yy",},},
-    {"id":{"name":"Font_Arial","path":"fonts/Font_Arial/Font_Arial.yy",},},
     {"id":{"name":"obj_advance_button","path":"objects/obj_advance_button/obj_advance_button.yy",},},
     {"id":{"name":"obj_advance_confirm_popup","path":"objects/obj_advance_confirm_popup/obj_advance_confirm_popup.yy",},},
     {"id":{"name":"obj_animation_control","path":"objects/obj_animation_control/obj_animation_control.yy",},},
