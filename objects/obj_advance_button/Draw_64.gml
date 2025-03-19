@@ -7,10 +7,10 @@ var btn_height = 40;
 
 // Draw semi-transparent button background
 draw_set_alpha(0.8);
-draw_set_color(c_blue);
+draw_set_color(make_color_rgb(100, 100, 255));
 draw_rectangle(btn_x, btn_y, btn_x + btn_width, btn_y + btn_height, false);
 draw_set_alpha(1);
 
 // Draw button text
-draw_set_color(c_orange);
+draw_set_color(c_white);
 draw_text(btn_x + 20, btn_y + 12, "Next Week");
