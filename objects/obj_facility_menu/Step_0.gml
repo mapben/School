@@ -1,109 +1,71 @@
 /// @description Insert description here
 // You can write your code in this editor
+/// @description Insert description here
+// You can write your code in this editor
+// Get GUI coordinates for popup box
+var menu_x = display_get_gui_width() / 2 - 100;
+var menu_y = display_get_gui_height() / 2 - 50;
+var menu_w = 200;
+var menu_h = 100;
+
+// Get mouse position in GUI space
 var mx = device_mouse_x_to_gui(0);
 var my = device_mouse_y_to_gui(0);
-var menu_x = display_get_gui_width() / 2 - 100;
-var menu_y = display_get_gui_height() / 2 - 75;
 
+// Detect left-click
 if (mouse_check_button_pressed(mb_left)) {
-    if (mx > menu_x + 40 && mx < menu_x + 160) {
-        if (my > menu_y + 50 && my < menu_y + 70 && !array_contains(global.facilities, "ping pong table")) {
-			if(global.school_budget < 500) {
-				audio_play_sound(sound_error, 10, false);
-				return;
+    // Clicked "YES"
+    if (mx > menu_x + 50 && mx < menu_x + 90 && my > menu_y + 70 && my < menu_y + 90) {
+        if(global.school_budget < global.current_price) {
+			audio_play_sound(sound_error, 10, false);
+			show_message("Not enough money!");
+		}
+		else {
+			for (var i = 0; i < instance_number(obj_par_environment); i++) {
+				var cur_facility = instance_find(obj_par_environment, i);
+				if(cur_facility.x == global.build_x and cur_facility.y == global.build_y) {
+					cur_facility.draw_alpha = 1;
+				}
 			}
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_ping_pong_table);
-            global.school_budget -= 500;
+            global.school_budget -= global.current_price;
 			var new_facility = {
 			    x: global.build_x,
 			    y: global.build_y,
-			    type: "ping pong table"
+			    type: global.build_object
 			};
 			array_push(global.facilities, new_facility);
 			obj_game_control.calculate_facility_grade();
 			instance_destroy();
 			global.occupied = false;
-        }
-        if (my > menu_y + 80 && my < menu_y + 100 && !array_contains(global.facilities, "piano")) {
-            if(global.school_budget < 1500) {
-				audio_play_sound(sound_error, 10, false);
-				return;
-			}
-			instance_create_layer(global.build_x, global.build_y, "Instances", obj_piano);
-            global.school_budget -= 1500;
-			var new_facility = {
-			    x: global.build_x,
-			    y: global.build_y,
-			    type: "piano"
-			};
-			array_push(global.facilities, new_facility);
-			obj_game_control.calculate_facility_grade();
-			instance_destroy();
-			global.occupied = false;
-        }
-		if (my > menu_y + 110 && my < menu_y + 130 && !array_contains(global.facilities, "soccer field")) {
-            if(global.school_budget < 10000) {
-				audio_play_sound(sound_error, 10, false);
-				return;
-			}
-			instance_create_layer(global.build_x, global.build_y, "Instances", obj_soccer_field);
-            global.school_budget -= 10000;
-			var new_facility = {
-			    x: global.build_x,
-			    y: global.build_y,
-			    type: "soccer field"
-			};
-			array_push(global.facilities, new_facility);
-			obj_game_control.calculate_facility_grade();
-			instance_destroy();
-			global.occupied = false;
-        }
-		if (my > menu_y + 140 && my < menu_y + 160 && !array_contains(global.facilities, "swimming pool")) {
-            if(global.school_budget < 30000) {
-				audio_play_sound(sound_error, 10, false);
-				return;
-			}
-			instance_create_layer(global.build_x, global.build_y, "Instances", obj_swimming_pool);
-            global.school_budget -= 30000;
-			var new_facility = {
-			    x: global.build_x,
-			    y: global.build_y,
-			    type: "swimming pool"
-			};
-			array_push(global.facilities, new_facility);
-			obj_game_control.calculate_facility_grade();
-			instance_destroy();
-			global.occupied = false;
-        }
-		if (my > menu_y + 170 && my < menu_y + 190 && !array_contains(global.facilities, "gym")) {
-            if(global.school_budget < 50000) {
-				audio_play_sound(sound_error, 10, false);
-				return;
-			}
-			instance_create_layer(global.build_x, global.build_y, "Instances", obj_new_building);
-            global.school_budget -= 50000;
-			var new_facility = {
-			    x: global.build_x,
-			    y: global.build_y,
-			    type: "gym"
-			};
-			array_push(global.facilities, new_facility);
-			obj_game_control.calculate_facility_grade();
-			instance_destroy();
-			global.occupied = false;
-        }
-		
-        if (my > menu_y + 200 && my < menu_y + 230) {
-            instance_create_layer(global.build_x, global.build_y, "Instances", obj_empty_land);
-            instance_destroy();
-			global.occupied = false;
-        }
+		}
+    }
+
+    // Clicked "NO"
+    if (mx > menu_x + 130 && mx < menu_x + 170 && my > menu_y + 70 && my < menu_y + 90) {
+		global.occupied = false;
+        instance_destroy(); // Close popup without changing anything
     }
 }
 
-if keyboard_check(vk_escape)
-{
-    instance_create_layer(global.build_x, global.build_y, "Instances", obj_empty_land);
-    instance_destroy();
+if (keyboard_check_pressed(ord("Y"))) {
+	for (var i = 0; i < instance_number(obj_par_environment); i++) {
+		var cur_facility = instance_find(obj_par_environment, i);
+		if(cur_facility.x == global.build_x and cur_facility.y == global.build_y) {
+			cur_facility.draw_alpha = 1;
+		}
+	}
+    global.school_budget -= global.current_price;
+	var new_facility = {
+		x: global.build_x,
+		y: global.build_y,
+		type: global.build_object
+	};
+	array_push(global.facilities, new_facility);
+	obj_game_control.calculate_facility_grade();
+	instance_destroy();
 	global.occupied = false;
+}
+if (keyboard_check_pressed(ord("N"))) {
+	global.occupied = false;
+    instance_destroy(); // Close popup without changing anything
 }
