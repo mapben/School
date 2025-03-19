@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_controls",
+    "path":"sprites/spr_controls/spr_controls.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
