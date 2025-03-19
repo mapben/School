@@ -1,17 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_par_environment",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_new_building",
+  "eventList":[],
   "managed":true,
-  "name":"obj_par_environment",
+  "name":"obj_new_building",
   "overriddenProperties":[],
   "parent":{
     "name":"environment",
     "path":"folders/Objects/environment.yy",
   },
-  "parentObjectId":null,
+  "parentObjectId":{
+    "name":"obj_par_environment",
+    "path":"objects/obj_par_environment/obj_par_environment.yy",
+  },
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_new_building",
+    "path":"sprites/spr_new_building/spr_new_building.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }
